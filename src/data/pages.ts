@@ -22,11 +22,38 @@ interface ScrapedPage {
   pdfs: { href: string; label: string }[];
 }
 
+// PDFs that return 404 on the legacy server (verified during sync).
+const unavailablePdfs = new Set([
+  '/downloads/Service Bulletings 4_1/5.pdf',
+  '/downloads/Service Bulletings 4_1/16.pdf',
+  '/downloads/Service Bulletings 4_1/17.pdf',
+  '/downloads/Service Bulletings 4_1/26.pdf',
+  '/downloads/Service Bulletings 4_1/36.pdf',
+]);
+
+function fixPdfHref(href: string): string | null {
+  const normalized = href.startsWith('/') ? href : `/${href}`;
+  if (unavailablePdfs.has(normalized)) return null;
+  // Legacy AGI overview PDF was removed from the server; AGI-T is the closest replacement.
+  if (normalized === '/downloads/Automotive3_2/AGI.pdf') {
+    return '/downloads/Automotive3_2/AGI/AGI-T.pdf';
+  }
+  return normalized;
+}
+
 function fixContentPaths(html: string): string {
   return html
     .replace(/src="images\//g, 'src="/images/')
     .replace(/src="downloads\//g, 'src="/downloads/')
     .replace(/href="downloads\//g, 'href="/downloads/')
+    .replace(/href="\/downloads\/Automotive3_2\/AGI\.pdf"/g, 'href="/downloads/Automotive3_2/AGI/AGI-T.pdf"')
+    .replace(
+      new RegExp(
+        `<a href="(${[...unavailablePdfs].map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})"[^>]*>[^<]*</a>\\s*`,
+        'g',
+      ),
+      '',
+    )
     .replace(/href="(\d+\w+\.aspx)"/gi, (_, p) => {
       const mapped = urlMap[p] ?? urlMap[p.charAt(0).toUpperCase() + p.slice(1)];
       return mapped ? `href="${mapped}"` : `href="/${p}"`;
@@ -79,10 +106,12 @@ for (const [, scraped] of Object.entries(scrapedModules)) {
     description: scraped.description,
     h1: scraped.h1,
     content: fixContentPaths(scraped.content),
-    pdfs: scraped.pdfs.map((p) => ({
-      href: p.href.startsWith('/') ? p.href : `/${p.href}`,
-      label: p.label || 'Download PDF',
-    })),
+    pdfs: scraped.pdfs
+      .map((p) => {
+        const href = fixPdfHref(p.href);
+        return href ? { href, label: p.label || 'Download PDF' } : null;
+      })
+      .filter((p): p is { href: string; label: string } => p !== null),
     breadcrumbs: buildBreadcrumbs(path),
   });
 }

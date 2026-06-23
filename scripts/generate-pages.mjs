@@ -51,8 +51,6 @@ const urlMap = {
   '346Aftermarket.aspx': '/products/aftermarket/prototype-production',
   'Support.aspx': '/support',
   '41support.aspx': '/support/technical-support',
-  '42support.aspx': '/support/training',
-  '43support.aspx': '/support/download-literature',
   'newsevents.aspx': '/news-events',
   '51NewsEvents.aspx': '/news-events/news',
   '52NewsEvents.aspx': '/news-events/events',

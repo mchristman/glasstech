@@ -54,8 +54,8 @@ const urlMap = {
   'Support.aspx': '/support',
   'support.aspx': '/support',
   '41support.aspx': '/support/technical-support',
-  '42support.aspx': '/support/training',
-  '43support.aspx': '/support/download-literature',
+  '42support.aspx': '/support',
+  '43support.aspx': '/support',
   'newsevents.aspx': '/news-events',
   'NewsEvents.aspx': '/news-events',
   'Newsevents.aspx': '/news-events',
@@ -82,12 +82,27 @@ const rules = Object.entries(urlMap)
   })
   .join('\n');
 
+const removedPageRedirects = [
+  { from: 'support/training', name: 'Removed support training page' },
+  { from: 'support/download-literature', name: 'Removed support download-literature page' },
+];
+
+const removedRules = removedPageRedirects
+  .map(
+    ({ from, name }) => `        <rule name="${name}" stopProcessing="true">
+          <match url="^${from}/?$" ignoreCase="true" />
+          <action type="Redirect" url="/support/" redirectType="Permanent" />
+        </rule>`,
+  )
+  .join('\n');
+
 const config = `<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
   <system.webServer>
     <rewrite>
       <rules>
 ${rules}
+${removedRules}
         <!-- Catch-all for any remaining .aspx requests -->
         <rule name="Redirect legacy aspx fallback" stopProcessing="true">
           <match url="(.*)\\.aspx$" ignoreCase="true" />

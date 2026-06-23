@@ -96,8 +96,6 @@ export const mainNav: NavItem[] = [
     href: '/support',
     children: [
       { label: 'Technical Support', href: '/support/technical-support' },
-      { label: 'Training', href: '/support/training' },
-      { label: 'Download Literature', href: '/support/download-literature' },
     ],
   },
   { label: 'Contact', href: '/contact' },

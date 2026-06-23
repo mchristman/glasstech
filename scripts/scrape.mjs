@@ -27,7 +27,7 @@ const PAGES = [
   '34Aftermarket.aspx', '341Aftermarket.aspx', '342Aftermarket.aspx',
   '343Aftermarket.aspx', '344Aftermarket.aspx', '345Aftermarket.aspx',
   '346Aftermarket.aspx',
-  'Support.aspx', '41support.aspx', '42support.aspx', '43support.aspx',
+  'Support.aspx', '41support.aspx',
   'newsevents.aspx', '51NewsEvents.aspx', '52NewsEvents.aspx', '53NewsEvents.aspx',
   'Software.aspx', '71AGIR.aspx', '71AGIT.aspx', '72Software.aspx', '73Software.aspx',
   'Contactus.aspx', 'PrivacyPolicy.aspx',

@@ -23,10 +23,12 @@ glasstech-website/
 │   ├── pages/          # 56 static routes (auto-generated + custom)
 │   └── styles/         # Tailwind theme with Glasstech brand colors
 ├── public/
+│   ├── downloads/      # Product literature PDFs (synced from legacy site)
 │   ├── images/         # Brand assets from live site
 │   └── robots.txt
 ├── scripts/
 │   ├── scrape.mjs           # Re-scrape content from legacy site
+│   ├── download-pdfs.mjs    # Sync PDFs from legacy /downloads/
 │   ├── generate-pages.mjs   # Regenerate Astro page files
 │   └── generate-redirects.mjs
 ├── redirects.web.config     # IIS 301 redirect map (61 rules)
@@ -71,9 +73,10 @@ This produces a static site in `dist/`.
 
 Copy the entire contents of `dist/` to the IIS site root (e.g. `C:\inetpub\wwwroot\glasstech`).
 
-Also copy from the legacy server:
-- `/downloads/` folder (PDFs and product literature referenced by product pages)
+Also copy from the legacy server if needed:
 - Any additional assets not included in this build
+
+Product literature PDFs live in `public/downloads/` and are synced from the legacy site with `node scripts/download-pdfs.mjs`.
 
 ### 3. Configure IIS redirects
 
