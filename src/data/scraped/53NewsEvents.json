@@ -1,0 +1,56 @@
+{
+  "page": "53NewsEvents.aspx",
+  "url": "http://www.glasstech.com/53NewsEvents.aspx",
+  "title": "News & Events",
+  "description": "",
+  "h1": "Press Releases",
+  "content": "<div class=\"subMidCopy\">\r\n       \r\n            <h1>Press Releases</h1> <a href=\"rss/PressReleases.xml\" class=\"feed\" target=\"_blank\">Subscribe to our feed</a>\r\n            <p>Check here regularly for the latest news on Glasstech’s technologies, products and people.</p>\r\n                \r\n        </div>\r\n\r\n                <div class=\"pdf-downloads mt-8 p-6 bg-slate-100 rounded-lg\"><h2>Downloads</h2><a href=\"/downloads/NewsReleases/GLASSNEWS10-13-08.pdf\" class=\"btn btn-primary mr-2 mb-2\" target=\"_blank\" rel=\"noopener\">October 13, 2008</a>\n<a href=\"/downloads/NewsReleases/GLASSNEWS8-15-08.pdf\" class=\"btn btn-primary mr-2 mb-2\" target=\"_blank\" rel=\"noopener\">August 15, 2008</a>\n<a href=\"/downloads/NewsReleases/GLASSNEWS3-19-08.pdf\" class=\"btn btn-primary mr-2 mb-2\" target=\"_blank\" rel=\"noopener\">March 19, 2008</a>\n<a href=\"/downloads/NewsReleases/GLASNEWS1-25-08.pdf\" class=\"btn btn-primary mr-2 mb-2\" target=\"_blank\" rel=\"noopener\">January 25, 2008</a>\n<a href=\"/downloads/NewsReleases/GLASSNEWS1-25-08_2.pdf\" class=\"btn btn-primary mr-2 mb-2\" target=\"_blank\" rel=\"noopener\">January 25, 2008</a></div><div class=\"clear\">\r\n                </div>\r\n            </div>\r\n        </div>",
+  "links": [
+    {
+      "href": "rss/PressReleases.xml",
+      "text": "Subscribe to our feed"
+    },
+    {
+      "href": "/downloads/NewsReleases/GLASSNEWS10-13-08.pdf",
+      "text": "October 13, 2008"
+    },
+    {
+      "href": "/downloads/NewsReleases/GLASSNEWS8-15-08.pdf",
+      "text": "August 15, 2008"
+    },
+    {
+      "href": "/downloads/NewsReleases/GLASSNEWS3-19-08.pdf",
+      "text": "March 19, 2008"
+    },
+    {
+      "href": "/downloads/NewsReleases/GLASNEWS1-25-08.pdf",
+      "text": "January 25, 2008"
+    },
+    {
+      "href": "/downloads/NewsReleases/GLASSNEWS1-25-08_2.pdf",
+      "text": "January 25, 2008"
+    }
+  ],
+  "pdfs": [
+    {
+      "href": "downloads/NewsReleases/GLASSNEWS10-13-08.pdf",
+      "label": "October 13, 2008"
+    },
+    {
+      "href": "downloads/NewsReleases/GLASSNEWS8-15-08.pdf",
+      "label": "August 15, 2008"
+    },
+    {
+      "href": "downloads/NewsReleases/GLASSNEWS3-19-08.pdf",
+      "label": "March 19, 2008"
+    },
+    {
+      "href": "downloads/NewsReleases/GLASNEWS1-25-08.pdf",
+      "label": "January 25, 2008"
+    },
+    {
+      "href": "downloads/NewsReleases/GLASSNEWS1-25-08_2.pdf",
+      "label": "January 25, 2008"
+    }
+  ]
+}

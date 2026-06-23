@@ -1,0 +1,36 @@
+{
+  "page": "default.aspx",
+  "url": "http://www.glasstech.com/default.aspx",
+  "title": "Glasstech, Inc. The leader in glass tempering and bending techology",
+  "description": "Glasstech, Inc. The leader in glass tempering and bending euqipment.  Servicing the Automotive, Architectural and Solar Markets.",
+  "h1": "",
+  "content": "<div class=\"homeCatHldr_brdr\">\r\n\t\t\t\t\t\t<div class=\"homeCatsCont\">\r\n\t\t\t\t\t\t\t\t<h2>Solar</h2>\r\n\t\t\t\t\t\t\t\t<img src=\"images/homeCat_solar.jpg\" width=\"223\" height=\"66\" alt=\"Solar\" />\r\n\t\t\t\t\t\t\t\t<p>Glasstech provides precisely bent or curved glass equipment solutions for concentration solar power (CSP) and concentration photovoltaic (CPV) markets, as well as equipment solutions for fabrication of extremely flat glass for the photovoltaic (PV) market. </p>\r\n\t\t\t\t  </div>\r\n\t\t\t\t\t\t<div class=\"homeCatsLinks\"><img src=\"images/homeCats_moreBtn.jpg\" width=\"11\" height=\"11\" alt=\"More\" /><a href=\"31Solar.aspx\">More about solar glass processing</a></div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"homeCatHldr_brdr\"> \r\n\t\t\t\t\t\t<div class=\"homeCatsCont\">\r\n\t\t\t\t\t\t\t\t<h2>Automotive</h2>\r\n\t\t\t\t\t\t\t\t<img src=\"images/homeCat_auto.jpg\" width=\"223\" height=\"66\" alt=\"Automotive\" />\r\n\t\t\t\t\t\t\t\t<p>Glasstech automotive systems are the products of inventive minds, creative thinking and innovative problem solving. Time and production have proven, beyond a doubt, that our equipment is the most rugged, dependable and versatile.</p>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"homeCatsLinks\"><img src=\"images/homeCats_moreBtn.jpg\" width=\"11\" height=\"11\" alt=\"Auto - More\" /><a href=\"32Automotive.aspx\">More about automotive glass processing</a></div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"homeCatHldr_brdr\">\r\n\t\t\t\t\t\t<div class=\"homeCatsCont\">\r\n\t\t\t\t\t\t\t\t<h2>Architectural</h2>\r\n\t\t\t\t\t\t\t\t<img src=\"images/homeCat_arch.jpg\" width=\"223\" height=\"66\" alt=\"Architectural\" />\r\n\t\t\t\t\t\t\t\t<p>Glasstech architectural systems are renowned for producing everything from high performance coated glass to large gracefully bent lites to small radius tempered panels for creative interior designs – technology to keep you on the cutting edge.</p>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"homeCatsLinks\"><img src=\"images/homeCats_moreBtn.jpg\" width=\"11\" height=\"11\" alt=\"Arch - More\" /><a href=\"33Architectural.aspx\">More about architechtural glass processing</a></div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"homeCatHldr_noBrdr\">\r\n\t\t\t\t\t\t<div class=\"homeCatsCont\">\r\n\t\t\t\t\t\t\t\t<h2>Aftermarket</h2>\r\n\t\t\t\t\t\t\t\t<img src=\"images/homeCat_after.jpg\" width=\"223\" height=\"66\" alt=\"Aftermarket\" />\r\n\t\t\t\t\t\t\t\t<p>Aftermarket services provide our customers with continued support throughout the life cycle of our products. As evidence of the value this service provides our customers, the aftermarket has become one of the fastest growing segments of Glasstech's business.</p>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"homeCatsLinks\"><img src=\"images/homeCats_moreBtn.jpg\" width=\"11\" height=\"11\" alt=\"After - More\"/><a href=\"34Aftermarket.aspx\">More about aftermarket services</a></div>\r\n                        <div class=\"homeCatsLinks\"><img src=\"images/homeCats_moreBtn.jpg\" width=\"11\" height=\"11\" alt=\"More\" /><a href=\"Software.aspx\" style=\"margin-right: 43px;\">More about Inspection</a></div>\r\n\t\t\t\t</div>",
+  "links": [
+    {
+      "href": "31Solar.aspx",
+      "text": "More about solar glass processing"
+    },
+    {
+      "href": "32Automotive.aspx",
+      "text": "More about automotive glass processing"
+    },
+    {
+      "href": "33Architectural.aspx",
+      "text": "More about architechtural glass processing"
+    },
+    {
+      "href": "34Aftermarket.aspx",
+      "text": "More about aftermarket services"
+    },
+    {
+      "href": "Software.aspx",
+      "text": "More about Inspection"
+    }
+  ],
+  "pdfs": [
+    {
+      "href": "downloads/Glasstech_Hall_13_Stand_D63_201810.pdf",
+      "label": "Please be sure to visit our stand at the glasstec 2018 fair Oct. 23rd - 26th"
+    }
+  ]
+}

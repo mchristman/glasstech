@@ -1,0 +1,20 @@
+{
+  "page": "Quality.aspx",
+  "url": "http://www.glasstech.com/Quality.aspx",
+  "title": "Glasstech, Inc. - Quality",
+  "description": "Glasstech, Inc. - Quality. The leader in glass tempering and bending euqipment.  Servicing the Automotive, Architectural and Solor Markets.",
+  "h1": "Quality Policy",
+  "content": "<div class=\"subMidCopy\">\r\n\t\t\t\t\t\t\t\t<h1>Quality Policy</h1>\r\n\t\t\t\t\t\t\t\t<p>Glasstech is committed to continuously improve and provide its products and services so that they meet or exceed its own and its customers' reasonable quality, cost and schedule requirements.</p>\r\n\t\t\t\t\t\t\t\t<p><a href=\"downloads/ISO_9001_2015_Certificate101022.pdf\" target=\"_blank\">Certificate of Registration</a></p>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\r\n\t\t\t\r\n\r\n\r\n\r\n\r\n\r\n\r\n                \r\n                  \r\n                <div class=\"clear\">\r\n                </div>\r\n            </div>\r\n        </div>",
+  "links": [
+    {
+      "href": "downloads/ISO_9001_2015_Certificate101022.pdf",
+      "text": "Certificate of Registration"
+    }
+  ],
+  "pdfs": [
+    {
+      "href": "downloads/ISO_9001_2015_Certificate101022.pdf",
+      "label": "Certificate of Registration"
+    }
+  ]
+}

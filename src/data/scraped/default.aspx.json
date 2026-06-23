@@ -1,0 +1,32 @@
+{
+  "aspx": "default.aspx",
+  "slug": "/",
+  "title": "Glasstech, Inc. The leader in glass tempering and bending techology",
+  "description": "Glasstech, Inc. The leader in glass tempering and bending euqipment. Servicing the Automotive, Architectural and Solar Markets.",
+  "contentHtml": "<div class=\"homeCats\">\r\n\t\t\t\t<div class=\"homeCatHldr_brdr\">\r\n\t\t\t\t\t\t<div class=\"homeCatsCont\">\r\n\t\t\t\t\t\t\t\t<h2>Solar</h2>\r\n\t\t\t\t\t\t\t\t<img src=\"/images/homeCat_solar.jpg\" width=\"223\" height=\"66\" alt=\"Solar\" />\r\n\t\t\t\t\t\t\t\t<p>Glasstech provides precisely bent or curved glass equipment solutions for concentration solar power (CSP) and concentration photovoltaic (CPV) markets, as well as equipment solutions for fabrication of extremely flat glass for the photovoltaic (PV) market. </p>\r\n\t\t\t\t  </div>\r\n\t\t\t\t\t\t<div class=\"homeCatsLinks\"><img src=\"/images/homeCats_moreBtn.jpg\" width=\"11\" height=\"11\" alt=\"More\" /><a href=\"/products/solar\">More about solar glass processing</a></div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"homeCatHldr_brdr\"> \r\n\t\t\t\t\t\t<div class=\"homeCatsCont\">\r\n\t\t\t\t\t\t\t\t<h2>Automotive</h2>\r\n\t\t\t\t\t\t\t\t<img src=\"/images/homeCat_auto.jpg\" width=\"223\" height=\"66\" alt=\"Automotive\" />\r\n\t\t\t\t\t\t\t\t<p>Glasstech automotive systems are the products of inventive minds, creative thinking and innovative problem solving. Time and production have proven, beyond a doubt, that our equipment is the most rugged, dependable and versatile.</p>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"homeCatsLinks\"><img src=\"/images/homeCats_moreBtn.jpg\" width=\"11\" height=\"11\" alt=\"Auto - More\" /><a href=\"/products/automotive\">More about automotive glass processing</a></div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"homeCatHldr_brdr\">\r\n\t\t\t\t\t\t<div class=\"homeCatsCont\">\r\n\t\t\t\t\t\t\t\t<h2>Architectural</h2>\r\n\t\t\t\t\t\t\t\t<img src=\"/images/homeCat_arch.jpg\" width=\"223\" height=\"66\" alt=\"Architectural\" />\r\n\t\t\t\t\t\t\t\t<p>Glasstech architectural systems are renowned for producing everything from high performance coated glass to large gracefully bent lites to small radius tempered panels for creative interior designs – technology to keep you on the cutting edge.</p>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"homeCatsLinks\"><img src=\"/images/homeCats_moreBtn.jpg\" width=\"11\" height=\"11\" alt=\"Arch - More\" /><a href=\"/products/architectural\">More about architechtural glass processing</a></div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"homeCatHldr_noBrdr\">\r\n\t\t\t\t\t\t<div class=\"homeCatsCont\">\r\n\t\t\t\t\t\t\t\t<h2>Aftermarket</h2>\r\n\t\t\t\t\t\t\t\t<img src=\"/images/homeCat_after.jpg\" width=\"223\" height=\"66\" alt=\"Aftermarket\" />\r\n\t\t\t\t\t\t\t\t<p>Aftermarket services provide our customers with continued support throughout the life cycle of our products. As evidence of the value this service provides our customers, the aftermarket has become one of the fastest growing segments of Glasstech's business.</p>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"homeCatsLinks\"><img src=\"/images/homeCats_moreBtn.jpg\" width=\"11\" height=\"11\" alt=\"After - More\"/><a href=\"/products/aftermarket\">More about aftermarket services</a></div>\r\n                        <div class=\"homeCatsLinks\"><img src=\"/images/homeCats_moreBtn.jpg\" width=\"11\" height=\"11\" alt=\"More\" /><a href=\"/inspection\" style=\"margin-right: 43px;\">More about Inspection</a></div>\r\n\t\t\t\t</div>\r\n\t\t</div>",
+  "contentText": "Solar Glasstech provides precisely bent or curved glass equipment solutions for concentration solar power (CSP) and concentration photovoltaic (CPV) markets, as well as equipment solutions for fabrication of extremely flat glass for the photovoltaic (PV) market. More about solar glass processing Automotive Glasstech automotive systems are the products of inventive minds, creative thinking and innovative problem solving. Time and production have proven, beyond a doubt, that our equipment is the most rugged, dependable and versatile. More about automotive glass processing Architectural Glasstech architectural systems are renowned for producing everything from high performance coated glass to large gracefully bent lites to small radius tempered panels for creative interior designs – technology to keep you on the cutting edge. More about architechtural glass processing Aftermarket Aftermarket services provide our customers with continued support throughout the life cycle of our products. As evidence of the value this service provides our customers, the aftermarket has become one of the fastest growing segments of Glasstech's business. More about aftermarket services More about Inspection",
+  "headings": [
+    {
+      "level": 2,
+      "text": "Solar"
+    },
+    {
+      "level": 2,
+      "text": "Automotive"
+    },
+    {
+      "level": 2,
+      "text": "Architectural"
+    },
+    {
+      "level": 2,
+      "text": "Aftermarket"
+    }
+  ],
+  "pdfs": [
+    {
+      "href": "/downloads/Glasstech_Hall_13_Stand_D63_201810.pdf",
+      "label": "Please be sure to visit our stand at the glasstec 2018 fair Oct. 23rd - 26th"
+    }
+  ]
+}

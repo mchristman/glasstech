@@ -1,0 +1,120 @@
+{
+  "aspx": "52NewsEvents.aspx",
+  "slug": "/news-events/newsletter",
+  "title": "News & Events",
+  "description": "",
+  "contentHtml": "<h1>Newsletter</h1><a href=\"rss/News.xml\" class=\"feed\" target=\"_blank\">Subscribe to our feed</a>\r\n            <p><b>Glasstech World - Issue 3</b></p>\r\n            <p>\r\n                <img src=\"/downloads/Newsletters/GTWorld_Issue03_ThumbNail.jpg\" align=\"left\" hspace=\"5\"  /></p>\r\n\t    <p>Latest edition of Glasstech World newletter<br /></P>\r\n            <p><a href=\"/downloads/Newsletters/GTWorld_Issue03_English.PDF\" target=\"_blank\">Issue 3 (English)</a>&nbsp;<a href=\"/downloads/Newsletters/GTWorld_2020Summer_Chinese.PDF\" target=\"_blank\">(Chinese)</a><br />\r\n                <em>375KB PDF file</em><br />\r\n                Requires Adobe Acrobat Reader</p>",
+  "contentText": "Newsletter Subscribe to our feed Glasstech World - Issue 3 Latest edition of Glasstech World newletter Issue 3 (English) (Chinese) 375KB PDF file Requires Adobe Acrobat Reader",
+  "headings": [
+    {
+      "level": 1,
+      "text": "Newsletter"
+    }
+  ],
+  "pdfs": [
+    {
+      "href": "/downloads/Newsletters/GTWorld_Issue03_English.PDF",
+      "label": "Issue 3 (English)"
+    },
+    {
+      "href": "/downloads/Newsletters/GTWorld_2020Summer_Chinese.PDF",
+      "label": "(Chinese)"
+    },
+    {
+      "href": "/downloads/Newsletters/GTWorld_2020Summer_English.pdf",
+      "label": "Summer 2020 (English)"
+    },
+    {
+      "href": "/downloads/Newsletters/GTWorld_2020Summer_Chinese.PDF",
+      "label": "(Chinese)"
+    },
+    {
+      "href": "/downloads/Newsletters/GLAS1429_NewsletterFA.PDF",
+      "label": "Fall 2018 (English)"
+    },
+    {
+      "href": "/downloads/Newsletters/GLAS1429_NewsletterFA_Chinese.PDF",
+      "label": "(Chinese)"
+    },
+    {
+      "href": "/downloads/Newsletters/GTWorldSpring2013.PDF",
+      "label": "Spring 2013 (English)"
+    },
+    {
+      "href": "/downloads/Newsletters/GTWorldSpring2013_Chinese.PDF",
+      "label": "(Chinese)"
+    },
+    {
+      "href": "/downloads/Newsletters/GTWorldSpring2012.PDF",
+      "label": "Spring 2012 (English)"
+    },
+    {
+      "href": "/downloads/Newsletters/GT_World_Spring2012_Chinese.PDF",
+      "label": "(Chinese)"
+    },
+    {
+      "href": "/downloads/Newsletters/GTWorldSpring2011.PDF",
+      "label": "Spring 2011"
+    },
+    {
+      "href": "/downloads/Newsletters/GlasNewsFall2010.PDF",
+      "label": "Letter from the President"
+    },
+    {
+      "href": "/downloads/Newsletters/GLAS1335newsLetter7.PDF",
+      "label": "Special Edition"
+    },
+    {
+      "href": "/downloads/Newsletters/GLASnewsFall2008.PDF",
+      "label": "Fall 2008"
+    },
+    {
+      "href": "/downloads/Newsletters/GLASnewsSpring2008.PDF",
+      "label": "Spring 2008"
+    },
+    {
+      "href": "/downloads/Newsletters/GLASNewsFall2007.PDF",
+      "label": "Fall 2007"
+    },
+    {
+      "href": "/downloads/Newsletters/GlasNewsFall2006.pdf",
+      "label": "Fall 2006"
+    },
+    {
+      "href": "/downloads/Newsletters/GlasNewsSpring2006.pdf",
+      "label": "Spring 2006"
+    },
+    {
+      "href": "/downloads/Newsletters/GlasNewsFall2005.pdf",
+      "label": "September 2005"
+    },
+    {
+      "href": "/downloads/Newsletters/GlasNewsSpring2005.pdf",
+      "label": "April 2005"
+    },
+    {
+      "href": "/downloads/Newsletters/GlasNewsFall2004.pdf",
+      "label": "November 2004"
+    },
+    {
+      "href": "/downloads/Newsletters/GlasNewsFall2003.pdf",
+      "label": "November 2003"
+    },
+    {
+      "href": "/downloads/Newsletters/GlasNewsSummer2003.pdf",
+      "label": "June 2003"
+    },
+    {
+      "href": "/downloads/Newsletters/GlasNewsSpring2003.pdf",
+      "label": "April 2003"
+    },
+    {
+      "href": "/downloads/Newsletters/GlasNewsFall2002.pdf",
+      "label": "October 2002"
+    },
+    {
+      "href": "/downloads/Newsletters/Glas1421_Newsletter_FA.pdf",
+      "label": "Fall 2016"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "page": "71AGIT.aspx",
+  "url": "http://www.glasstech.com/71AGIT.aspx",
+  "title": "AUTOMOTIVE GLASS INSPECTION - TRANSMITTED",
+  "description": "Glasstech, Inc. The leader in glass tempering and bending euqipment.  Servicing the Automotive, Architectural and Solar Markets. - Glass Inspection Equipment",
+  "h1": "AutoGlassInspector Transmitted - AGI-T™",
+  "content": "<div class=\"subMidCopy\">\r\n\t\t<h1>AutoGlassInspector Transmitted - AGI-T™</h1>\r\n        <p>Glasstech’s AutoGlassInspector software is a cost-effective solution for quantifying transmitted optical distortion in automotive glass. It measures processed glass sidelites, backlites and windshields to all current automotive standards.  </p>\r\n\r\n        <p>This Glasstech development has been certified by Volkswagen as evaluating glass to the TL-957 VW standard. The system also easily evaluates processed glass to standards set by BMW, Daimler and other automakers. </p>\r\n\r\n        <p>The AutoGlassInspector system consists of a Windows<sup><small>&reg;</small></sup>-based, computer-controlled, digital image acquisition system utilizing advanced computer programming to optically analyze automotive transmitted optics.</p>\r\n\r\n        <p>The system can be used as either an online inspection system or a laboratory-based system.  The software also can be used on any desktop or laptop computer for offline evaluation of raw data obtained from the inspection equipment.  </p>\r\n\r\n        <p>To receive a free, 30-day trial of the AutoGlassInspector, complete a short <a href=\"711Software.aspx\">questionnaire</a> and Glasstech will provide you with a link and sample data to use in evaluating the software.  </p>\r\n</div>\r\n\r\n                <div class=\"pdf-downloads mt-8 p-6 bg-slate-100 rounded-lg\"><h2>Downloads</h2><a href=\"/downloads/Automotive3_2/AGI/AGI-T.pdf\" class=\"btn btn-primary mr-2 mb-2\" target=\"_blank\" rel=\"noopener\">(English)</a>\n<a href=\"/downloads/Automotive3_2/AGI/AGI-T_Chinese.pdf\" class=\"btn btn-primary mr-2 mb-2\" target=\"_blank\" rel=\"noopener\">(Chinese)</a></div><div class=\"clear\">\r\n                </div>\r\n            </div>\r\n        </div>",
+  "links": [
+    {
+      "href": "711Software.aspx",
+      "text": "questionnaire"
+    },
+    {
+      "href": "/downloads/Automotive3_2/AGI/AGI-T.pdf",
+      "text": "(English)"
+    },
+    {
+      "href": "/downloads/Automotive3_2/AGI/AGI-T_Chinese.pdf",
+      "text": "(Chinese)"
+    }
+  ],
+  "pdfs": [
+    {
+      "href": "downloads/Automotive3_2/AGI/AGI-T.pdf",
+      "label": "(English)"
+    },
+    {
+      "href": "downloads/Automotive3_2/AGI/AGI-T_Chinese.pdf",
+      "label": "(Chinese)"
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "aspx": "41support.aspx",
+  "slug": "/support/service-bulletins",
+  "title": "Glasstech, Inc. - Support",
+  "description": "Glasstech, Inc. - Support. The leader in glass tempering and bending euqipment. Servicing the Automotive, Architectural and Solor Markets.",
+  "contentHtml": "<h1>Service Bulletins</h1>\r\n\t\t\t\t\t\t\t\t\t\t<p>Glasstech customers may contact Glasstech to determine if there are any service bulletins relevant to their specific system. To request information, <a href=\"BRequest.aspx\">click here</a>.</p>",
+  "contentText": "Service Bulletins Glasstech customers may contact Glasstech to determine if there are any service bulletins relevant to their specific system. To request information, click here .",
+  "headings": [
+    {
+      "level": 1,
+      "text": "Service Bulletins"
+    }
+  ],
+  "pdfs": [
+    {
+      "href": "/downloads/Service Bulletings 4_1/55.pdf",
+      "label": "Allen Bradley"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/54.pdf",
+      "label": "Dungs Valve"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/53.pdf",
+      "label": "Automotive Quench Blashhead Modification"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/52.pdf",
+      "label": "Chicago Blower Hub Cracks"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/51.pdf",
+      "label": "Nord Gearbox Oil Replacement"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/50.pdf",
+      "label": "Glasstech Upper DB 4"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/49.pdf",
+      "label": "Amicon PID"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/48.pdf",
+      "label": "Mold Paper"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/46.pdf",
+      "label": "New Architectural Bender Conveyor Wheels"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/45.pdf",
+      "label": "New CRB Conveyor Wheels"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/44.pdf",
+      "label": "TRL-RLL Gas System Leak Test"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/43.pdf",
+      "label": "Epson LQ-570 Printer"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/42.pdf",
+      "label": "Kromschroder Regulators Obsolete"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/41.pdf",
+      "label": "Bypass Plug in KromSchroder Gas Regulators"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/40.pdf",
+      "label": "Belt Driven Hot Fan Replacement"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/39.pdf",
+      "label": "Eurodrive Gearbox Obsolescence"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/38.pdf",
+      "label": "Quench Shuttle Drive Belt Clamp Improvement"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/37.pdf",
+      "label": "New Adhesive for CRB/ABTS Wheels"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/36.pdf",
+      "label": "Replacing Main Conveyor Chains"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/35.pdf",
+      "label": "Dungs Proportional Regulator Spring"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/34.pdf",
+      "label": "SO2 Usage in FCH Furnaces"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/33.pdf",
+      "label": "6809-Based Systems"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/32.pdf",
+      "label": "Hot Fan Cooling Water"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/31.pdf",
+      "label": "Phelps Hot Fan Grease"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/30.pdf",
+      "label": "CRB Grease"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/29.pdf",
+      "label": "PacSci Replacement"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/28.pdf",
+      "label": "Galil 700 Replacement"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/27.pdf",
+      "label": "Rolling Chain Replacement"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/26.pdf",
+      "label": "General Safety Reminder"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/25.pdf",
+      "label": "FCH2 Safety Circuit"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/24.pdf",
+      "label": "Hot Fan Grease"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/23.pdf",
+      "label": "Virtual Memory Settings"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/22.pdf",
+      "label": "24 Volt Power Supply Connections"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/21.pdf",
+      "label": "FCH Burner Circuit Modifications"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/20.pdf",
+      "label": "SPANG SCR Torque Specifications"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/17.pdf",
+      "label": "Glasstech Control Systems and Obsolescence"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/16.pdf",
+      "label": "Ircon Modline Plus Discontinuation"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/15.pdf",
+      "label": "Honeywell UDC100 Controllers"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/14.pdf",
+      "label": "Control Systems Year 2000"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/13.pdf",
+      "label": "Draft Curtain"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/12.pdf",
+      "label": "Colloidal Silica"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/11.pdf",
+      "label": "FCH Hot Fan Maintenance"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/10.pdf",
+      "label": "SCR Maintenance"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/9.pdf",
+      "label": "FCH Cool Down"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/8.pdf",
+      "label": "SCR Controller Maintenance and Replacement"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/7.pdf",
+      "label": "SCR Controller 170N Fuse Replace"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/6.pdf",
+      "label": "Lube of Ramsey Silent Chain"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/5.pdf",
+      "label": "Quench Fan Integrity"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/4.pdf",
+      "label": "SCR Heat Controllers"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/3.pdf",
+      "label": "Bender Safety Circuits"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/2.pdf",
+      "label": "Shuttle Door and Bender Roof"
+    },
+    {
+      "href": "/downloads/Service Bulletings 4_1/1.pdf",
+      "label": "Bender Chain Guides"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PageHeader from '../components/PageHeader.astro';
+import PageContent from '../components/PageContent.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { getPagesByPrefix } from '../data/pages';
+import { mainNav } from '../data/navigation';
+import type { PageData } from '../data/pages';
+
+type Market = 'solar' | 'automotive' | 'architectural' | 'aftermarket' | 'inspection';
+
+interface Props {
+  page: PageData;
+  market?: Market;
+}
+
+const { page, market } = Astro.props;
+
+// DRY fallback: derive the market from the route for product DETAIL pages
+// (e.g. /products/solar/crb-s -> "solar") so every data-driven detail page
+// shows its market art without hand-editing each file. Category pages pass an
+// explicit `market`, so this only fires when one wasn't provided. Non-product
+// pages and the /products index get no art.
+const productMarkets: Market[] = ['solar', 'automotive', 'architectural', 'aftermarket'];
+function inferMarket(pathname: string): Market | undefined {
+  const segments = pathname.replace(/\/+$/, '').split('/').filter(Boolean);
+  // Inspection landing + detail pages (e.g. /inspection, /inspection/agi-t).
+  if (segments[0] === 'inspection') return 'inspection';
+  // Product detail pages (e.g. /products/solar/crb-s -> "solar").
+  if (segments[0] === 'products' && segments.length >= 3) {
+    const candidate = segments[1] as Market;
+    if (productMarkets.includes(candidate)) return candidate;
+  }
+  return undefined;
+}
+
+const resolvedMarket = market ?? inferMarket(Astro.url.pathname);
+
+function getChildProducts(path: string) {
+  for (const section of mainNav) {
+    if (section.href === path && section.children) {
+      return section.children.map((child) => ({ title: child.label, href: child.href }));
+    }
+    if (section.children) {
+      for (const cat of section.children) {
+        if (cat.href === path && cat.children) {
+          return cat.children.map((child) => ({ title: child.label, href: child.href }));
+        }
+      }
+    }
+  }
+  const childPages = getPagesByPrefix(path + '/');
+  if (childPages.length > 0) {
+    return childPages.map((p) => ({ title: p.h1 || p.title, href: p.path }));
+  }
+  return [];
+}
+
+const childProducts = getChildProducts(page.path);
+const crumbs = page.breadcrumbs ?? [];
+const eyebrow = crumbs.length > 1 ? crumbs[crumbs.length - 2].label : undefined;
+---
+
+<BaseLayout title={page.title} description={page.description}>
+  <Header slot="header" />
+
+  <PageHeader title={page.h1 || page.title} eyebrow={eyebrow} breadcrumbs={crumbs} market={resolvedMarket} />
+
+  <div class="container-x py-12 md:py-16">
+    <PageContent content={page.content} pdfs={page.pdfs} />
+
+    {childProducts.length > 0 && (
+      <div class="mt-16 border-t border-slate-200 pt-12">
+        <h2 class="text-xl font-semibold text-ink">
+          {page.path === '/products' ? 'Markets' : 'Products & Services'}
+        </h2>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {childProducts.map((product) => (
+            <ProductCard title={product.title} href={product.href} />
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>

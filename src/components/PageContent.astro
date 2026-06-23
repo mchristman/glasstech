@@ -1,0 +1,63 @@
+---
+interface Props {
+  content: string;
+  pdfs?: { href: string; label: string }[];
+}
+
+const { content, pdfs = [] } = Astro.props;
+
+// The legacy markup contains unbalanced <div> tags (orphan closing tags that
+// would otherwise close our layout container and let content escape full-width).
+function balanceDivs(html: string): string {
+  let depth = 0;
+  const balanced = html.replace(/<div\b[^>]*>|<\/div\s*>/gi, (tag) => {
+    if (/^<\//.test(tag)) {
+      if (depth === 0) return ''; // drop unmatched closing tag
+      depth -= 1;
+      return tag;
+    }
+    depth += 1;
+    return tag;
+  });
+  return balanced + '</div>'.repeat(Math.max(0, depth));
+}
+
+function cleanContent(html: string): string {
+  const cleaned = html
+    // The scraped H1 is already shown in the page header
+    .replace(/<h1[^>]*>[\s\S]*?<\/h1>/i, '')
+    // Remove the legacy inline downloads block — we render a clean one below
+    .replace(/<div class="pdf-downloads[\s\S]*?<\/div>\s*(<div class="clear">[\s\S]*?<\/div>)?/i, '')
+    // Drop empty clear-fix divs left over from the legacy layout
+    .replace(/<div class="clear"[^>]*>\s*<\/div>/gi, '');
+  return balanceDivs(cleaned);
+}
+
+const hasPdfs = pdfs.length > 0;
+---
+
+<div class="prose-glasstech">
+  <Fragment set:html={cleanContent(content)} />
+</div>
+
+{hasPdfs && (
+  <div class="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+    <h2 class="text-xs font-semibold uppercase tracking-[0.16em] text-ink">Downloads</h2>
+    <div class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {pdfs.map((pdf) => (
+        <a
+          href={pdf.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-ink transition-colors hover:border-slate-300"
+        >
+          <span class="flex items-center gap-2.5">
+            <svg class="h-4 w-4 text-brand" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0 4-4m-4 4-4-4M5 19h14"/></svg>
+            {pdf.label || 'Download PDF'}
+          </span>
+          <svg class="h-4 w-4 text-slate-300 transition-colors group-hover:text-brand" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      ))}
+    </div>
+  </div>
+)}

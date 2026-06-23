@@ -1,0 +1,15 @@
+{
+  "aspx": "newsevents.aspx",
+  "slug": "/news-events",
+  "title": "Glasstech, Inc. - News & Events",
+  "description": "Glasstech, Inc. - News & Events. The leader in glass tempering and bending euqipment. Servicing the Automotive, Architectural and Solor Markets.",
+  "contentHtml": "<h1>News &amp; Events</h1>",
+  "contentText": "News & Events",
+  "headings": [
+    {
+      "level": 1,
+      "text": "News & Events"
+    }
+  ],
+  "pdfs": []
+}

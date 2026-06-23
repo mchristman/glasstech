@@ -1,0 +1,99 @@
+---
+// Self-hosted Archivo (heavy italic grotesque) for the header logo only.
+// Loaded here so the wordmark stays self-contained and offline-friendly.
+import '@fontsource/archivo/latin-700-italic.css';
+import '@fontsource/archivo/latin-800-italic.css';
+import '@fontsource/archivo/latin-900-italic.css';
+
+interface Props {
+  /** 'dark' renders dark text for light backgrounds; 'light' renders white text for dark backgrounds */
+  variant?: 'dark' | 'light';
+  /** When true, render the wordmark in the heavy italic logo font (header only). */
+  brand?: boolean;
+  class?: string;
+}
+
+const { variant = 'dark', brand = false, class: className = '' } = Astro.props;
+const textColor = variant === 'light' ? 'text-white' : 'text-ink';
+const subColor = variant === 'light' ? 'text-white/55' : 'text-muted';
+---
+
+
+<span class:list={['inline-flex items-center gap-2.5 select-none', className]}>
+  <!-- Abstract "bent glass" mark: trio of concentric quarter-arcs -->
+  <svg
+    width="34"
+    height="34"
+    viewBox="0 0 34 34"
+    fill="none"
+    aria-hidden="true"
+    class="shrink-0"
+  >
+    <rect width="34" height="34" rx="9" fill="#45556c" />
+    <rect width="34" height="34" rx="9" fill="url(#wm-grad)" fill-opacity="0.5" />
+    <path d="M9 23.5C9 16.6 13.6 11 19.3 11" stroke="white" stroke-opacity="0.95" stroke-width="1.6" stroke-linecap="round" />
+    <path d="M12.5 24C12.5 18.8 16 14.6 20.3 14.6" stroke="white" stroke-opacity="0.6" stroke-width="1.6" stroke-linecap="round" />
+    <path d="M16 24.2C16 21 18 18.4 20.6 18.4" stroke="white" stroke-opacity="0.35" stroke-width="1.6" stroke-linecap="round" />
+    <defs>
+      <linearGradient id="wm-grad" x1="0" y1="0" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#5a6b85" />
+        <stop offset="1" stop-color="#323d4e" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <span class="flex flex-col leading-none">
+    <span
+      class:list={[
+        brand ? 'wm-brand text-[1.3rem]' : 'text-[1.15rem] font-bold tracking-tight',
+        textColor,
+      ]}
+    >
+      Glasstech
+    </span>
+    <span class:list={['mt-1 text-[0.6rem] font-semibold uppercase tracking-[0.22em]', subColor]}>
+      Where Innovation Continues
+    </span>
+  </span>
+</span>
+
+<style>
+  /* Header wordmark: heavy bold italic lowercase grotesque to match the logo. */
+  .wm-brand {
+    font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: lowercase;
+    letter-spacing: -0.02em;
+    /* Heavy italic "g" has a deep descender and the slant overhangs on the
+       right. Give the glyph box room (and a touch of padding so the
+       background-clip:text gradient still paints the descender/overhang),
+       then offset with negative margins so the header layout is unchanged. */
+    line-height: 1.15;
+    display: inline-block;
+    padding-right: 0.1em;
+    padding-bottom: 0.12em;
+    margin-right: -0.1em;
+    margin-top: -0.075em;
+    margin-bottom: -0.195em;
+    overflow: visible;
+  }
+
+  /* Subtle brushed-metal sheen, tuned dark so it stays legible on the white header.
+     Falls back to a solid color where background-clip:text is unsupported. */
+  @supports (-webkit-background-clip: text) or (background-clip: text) {
+    .wm-brand:not(.text-white) {
+      background-image: linear-gradient(
+        160deg,
+        #16202c 0%,
+        #45556c 42%,
+        #8c98ab 58%,
+        #323d4e 100%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+  }
+</style>

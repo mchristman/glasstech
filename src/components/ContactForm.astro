@@ -1,0 +1,112 @@
+---
+const endpoint = import.meta.env.PUBLIC_CONTACT_FORM_ENDPOINT || '';
+---
+
+<form id="contact-form" class="space-y-5">
+  <p class="text-sm leading-6 text-muted">
+    Tell us what you think about our website, products, organization or anything else that comes to mind. We welcome all of your comments and questions.
+  </p>
+
+  <div class="grid gap-5 sm:grid-cols-2">
+    <div>
+      <label for="name" class="field-label">Name <span class="text-accent">*</span></label>
+      <input type="text" id="name" name="name" required class="field" />
+    </div>
+    <div>
+      <label for="company" class="field-label">Company <span class="text-accent">*</span></label>
+      <input type="text" id="company" name="company" required class="field" />
+    </div>
+  </div>
+
+  <div class="grid gap-5 sm:grid-cols-2">
+    <div>
+      <label for="country" class="field-label">Country <span class="text-accent">*</span></label>
+      <select id="country" name="country" required class="field">
+        <option value="">Select country</option>
+        <option value="USA">United States</option>
+        <option value="China">China</option>
+        <option value="India">India</option>
+        <option value="Canada">Canada</option>
+        <option value="Germany">Germany</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div>
+      <label for="product" class="field-label">Product Line</label>
+      <select id="product" name="product" class="field">
+        <option value="">Select product line</option>
+        <option value="Automotive">Automotive</option>
+        <option value="Architectural">Architectural</option>
+        <option value="Aftermarket">Aftermarket</option>
+        <option value="Solar">Solar</option>
+        <option value="Inspection">Inspection</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="grid gap-5 sm:grid-cols-2">
+    <div>
+      <label for="email" class="field-label">Email <span class="text-accent">*</span></label>
+      <input type="email" id="email" name="email" required class="field" />
+    </div>
+    <div>
+      <label for="phone" class="field-label">Phone <span class="text-accent">*</span></label>
+      <input type="tel" id="phone" name="phone" required class="field" />
+      <p class="mt-1.5 text-xs text-muted">If international, please include country code</p>
+    </div>
+  </div>
+
+  <div>
+    <label for="message" class="field-label">Comments or Questions</label>
+    <textarea id="message" name="message" rows="5" class="field resize-y"></textarea>
+  </div>
+
+  <div class="flex flex-wrap gap-3 pt-1">
+    <button type="submit" class="btn btn-accent">Submit</button>
+    <button type="reset" class="btn btn-outline">Clear form</button>
+  </div>
+
+  <p id="form-status" class="text-sm hidden"></p>
+</form>
+
+<script define:vars={{ endpoint }}>
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!endpoint) {
+      status.textContent = 'Contact form endpoint not configured. Please set PUBLIC_CONTACT_FORM_ENDPOINT in your environment.';
+      status.className = 'text-sm text-accent';
+      status.classList.remove('hidden');
+      return;
+    }
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      status.textContent = 'Sending...';
+      status.className = 'text-sm text-brand';
+      status.classList.remove('hidden');
+
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        status.textContent = 'Thank you! Your message has been sent.';
+        status.className = 'text-sm text-green-700';
+        form.reset();
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch {
+      status.textContent = 'Unable to send message. Please try again or contact us directly by phone.';
+      status.className = 'text-sm text-accent';
+    }
+  });
+</script>

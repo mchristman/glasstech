@@ -1,0 +1,32 @@
+{
+  "page": "72Software.aspx",
+  "url": "http://www.glasstech.com/72Software.aspx",
+  "title": "GLASSTECH SHAPE MODELER SOFTWARE",
+  "description": "Glasstech, Inc. The leader in glass tempering and bending euqipment.  Servicing the Automotive, Architectural and Solar Markets. - Glass Shape Modeler Software",
+  "h1": "Shape Modeler™",
+  "content": "<div class=\"subMidCopy\">\r\n\t\t<h1>Shape Modeler™</h1>\r\n        <p>Automotive glass designers and glass producers face continuing challenges. For designers, the challenge is to create vehicles that are lighter, more efficient, yet still distinctive. For producers, the challenge is to translate the designers’ styles into distortion-free, cost-effective glass parts.</p>\r\n\r\n        <p>Glasstech-developed mathematical models simulate the transmitted and reflected optical quality of a design shape when the part is installed at defined angles. Optical quality is strongly dependent on the forming process used and the complexity of the design.</p>\r\n\r\n        <p>Utilizing these mathematical models, Glasstech perfected Shape Modeler software, which saves glass processors time and money. This computer program evaluates glass designs while still in the CAD stage and identifies areas of transmitted and reflected optical distortion based on the Glasstech system that will be used to produce the part.</p>\r\n\r\n        <p>\r\n        Glasstech’s Shape Modeler software saves glass processors time and money by:\r\n        <ul>\r\n        <li>Reducing or eliminating intermediate tooling fabrication</li>\r\n        <li>Reducing development costs</li>\r\n        <li>Minimizing the concept-to-prototype time frame</li>\r\n        <li>Facilitating concurrent engineering via the optimizing link between geometry, formability and optical quality</li>\r\n        </ul>\r\n        </p>\r\n\r\n        <p>Glasstech’s advanced research department is positioned to offer designers alternative glass surface configurations that overcome problems in the original design. </p>\r\n\r\n        <p>To receive additional information on Shape Modeler, complete a short <a href=\"721Software.aspx\">questionnaire</a> and a Glasstech representative will contact you.  </p>\r\n\r\n\r\n</div>\r\n\r\n                <div class=\"pdf-downloads mt-8 p-6 bg-slate-100 rounded-lg\"><h2>Downloads</h2><a href=\"/downloads/Aftermarket 3_4/ShapeModeler_English.pdf\" class=\"btn btn-primary mr-2 mb-2\" target=\"_blank\" rel=\"noopener\">(English)</a>\n<a href=\"/downloads/Aftermarket 3_4/ShapeModeler_Chinese.pdf\" class=\"btn btn-primary mr-2 mb-2\" target=\"_blank\" rel=\"noopener\">(Chinese)</a></div><div class=\"clear\">\r\n                </div>\r\n            </div>\r\n        </div>",
+  "links": [
+    {
+      "href": "721Software.aspx",
+      "text": "questionnaire"
+    },
+    {
+      "href": "/downloads/Aftermarket 3_4/ShapeModeler_English.pdf",
+      "text": "(English)"
+    },
+    {
+      "href": "/downloads/Aftermarket 3_4/ShapeModeler_Chinese.pdf",
+      "text": "(Chinese)"
+    }
+  ],
+  "pdfs": [
+    {
+      "href": "downloads/Aftermarket 3_4/ShapeModeler_English.pdf",
+      "label": "(English)"
+    },
+    {
+      "href": "downloads/Aftermarket 3_4/ShapeModeler_Chinese.pdf",
+      "label": "(Chinese)"
+    }
+  ]
+}

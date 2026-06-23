@@ -1,0 +1,15 @@
+{
+  "aspx": "73Software.aspx",
+  "slug": "/inspection/testimonials",
+  "title": "Glasstech Home Page Template",
+  "description": "",
+  "contentHtml": "<h1>\r\n            Testimonials</h1>\r\n        <p>\r\n            According to a representative of Guardian Industries: \"We have been using the system for over 20 months and have been pleased with\r\n            the performance. The AutoGlassInspector allows us the flexibility to check windshields and backlites with little setup time. The\r\n            interface is easy to navigate and provides a clean optical analysis of the glass.\"\r\n        </p>",
+  "contentText": "Testimonials According to a representative of Guardian Industries: \"We have been using the system for over 20 months and have been pleased with the performance. The AutoGlassInspector allows us the flexibility to check windshields and backlites with little setup time. The interface is easy to navigate and provides a clean optical analysis of the glass.\"",
+  "headings": [
+    {
+      "level": 1,
+      "text": "Testimonials"
+    }
+  ],
+  "pdfs": []
+}

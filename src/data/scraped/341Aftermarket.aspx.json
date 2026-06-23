@@ -1,0 +1,32 @@
+{
+  "aspx": "341Aftermarket.aspx",
+  "slug": "/products/aftermarket/retrofits",
+  "title": "Aftermarket",
+  "description": "",
+  "contentHtml": "<h1>Retrofits</h1>\r\n\t\t\t\t\t\t\t\t\r\n<p>Retrofits enable glass processors to adapt the latest technology, increase capacity and expand the capability of their Glasstech systems. The modular construction of Glasstech systems readily facilitates upgrades and retrofits. In most cases, existing systems can be retrofitted with new technology much more economically than replacing the equipment. For example, the installation of a high-efficiency quench on a current architectural system can reduce quench operating costs by 50%. Furnace heaters can be extended on Glasstech systems to increase productivity and output.</p>\r\n\t\r\n    <h2>Technology Upgrades</h2>\r\n    <p>As Glasstech systems age, certain parts and components may become obsolete. Glasstech offers a solution in the form of technology upgrades for older systems. For example, the existing Motorola control systems on many systems have become obsolete. Therefore, Glasstech offers an Allen-Bradley Logix-based retrofit that simplifies machine control, can increase uptime and incorporates an HMI user-friendly interface.</p>\r\n    <h2>Energy Upgrades</h2>\r\n    <p>Managing costs is crucial in today’s competitive environment. Glasstech has upgrades to help reduce energy usage, including a new conveyor system with better furnace seals, a quench that uses less energy, forced convection gas heating and improved zone temperature control.</p>\r\n    <p>Glasstech makes customers aware well in advance when components will no longer be available, or equipment updates are in development. That way, key retrofits can be considered for future budgeting expenditure.</p>\r\n    <p>Please <a href=\"/contact\">contact Glasstech</a> today for information on available upgrades specific to your needs.</p>",
+  "contentText": "Retrofits Retrofits enable glass processors to adapt the latest technology, increase capacity and expand the capability of their Glasstech systems. The modular construction of Glasstech systems readily facilitates upgrades and retrofits. In most cases, existing systems can be retrofitted with new technology much more economically than replacing the equipment. For example, the installation of a high-efficiency quench on a current architectural system can reduce quench operating costs by 50%. Furnace heaters can be extended on Glasstech systems to increase productivity and output. Technology Upgrades As Glasstech systems age, certain parts and components may become obsolete. Glasstech offers a solution in the form of technology upgrades for older systems. For example, the existing Motorola control systems on many systems have become obsolete. Therefore, Glasstech offers an Allen-Bradley Logix-based retrofit that simplifies machine control, can increase uptime and incorporates an HMI user-friendly interface. Energy Upgrades Managing costs is crucial in today’s competitive environment. Glasstech has upgrades to help reduce energy usage, including a new conveyor system with better furnace seals, a quench that uses less energy, forced convection gas heating and improved zone temperature control. Glasstech makes customers aware well in advance when components will no longer be available, or equipment updates are in development. That way, key retrofits can be considered for future budgeting expenditure. Please contact Glasstech today for information on available upgrades specific to your needs.",
+  "headings": [
+    {
+      "level": 1,
+      "text": "Retrofits"
+    },
+    {
+      "level": 2,
+      "text": "Technology Upgrades"
+    },
+    {
+      "level": 2,
+      "text": "Energy Upgrades"
+    }
+  ],
+  "pdfs": [
+    {
+      "href": "/downloads/Aftermarket 3_4/retrofit.pdf",
+      "label": "Click here for more information on Glasstech's Automotive Retrofits."
+    },
+    {
+      "href": "/downloads/Aftermarket 3_4/retrofit 2.pdf",
+      "label": "Click here for more information on Glasstech's Architectural Retrofits."
+    }
+  ]
+}

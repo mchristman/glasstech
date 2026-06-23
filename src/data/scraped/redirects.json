@@ -1,0 +1,442 @@
+[
+  {
+    "from": "/default.aspx",
+    "to": "/"
+  },
+  {
+    "from": "/Aboutus.aspx",
+    "to": "/about"
+  },
+  {
+    "from": "/aboutus.aspx",
+    "to": "/about"
+  },
+  {
+    "from": "/CorporateOverview.aspx",
+    "to": "/about/corporate-overview"
+  },
+  {
+    "from": "/corporateoverview.aspx",
+    "to": "/about/corporate-overview"
+  },
+  {
+    "from": "/InvestorRelations.aspx",
+    "to": "/about/investor-relations"
+  },
+  {
+    "from": "/investorrelations.aspx",
+    "to": "/about/investor-relations"
+  },
+  {
+    "from": "/MarketsServed.aspx",
+    "to": "/about/markets-served"
+  },
+  {
+    "from": "/marketsserved.aspx",
+    "to": "/about/markets-served"
+  },
+  {
+    "from": "/Quality.aspx",
+    "to": "/about/quality"
+  },
+  {
+    "from": "/quality.aspx",
+    "to": "/about/quality"
+  },
+  {
+    "from": "/JobOpportunities.aspx",
+    "to": "/about/job-opportunities"
+  },
+  {
+    "from": "/jobopportunities.aspx",
+    "to": "/about/job-opportunities"
+  },
+  {
+    "from": "/Products.aspx",
+    "to": "/products"
+  },
+  {
+    "from": "/products.aspx",
+    "to": "/products"
+  },
+  {
+    "from": "/31Solar.aspx",
+    "to": "/products/solar"
+  },
+  {
+    "from": "/31solar.aspx",
+    "to": "/products/solar"
+  },
+  {
+    "from": "/311Solar.aspx",
+    "to": "/products/solar/crb-s"
+  },
+  {
+    "from": "/311solar.aspx",
+    "to": "/products/solar/crb-s"
+  },
+  {
+    "from": "/312Solar.aspx",
+    "to": "/products/solar/epb-s"
+  },
+  {
+    "from": "/312solar.aspx",
+    "to": "/products/solar/epb-s"
+  },
+  {
+    "from": "/313Solar.aspx",
+    "to": "/products/solar/db-4-s"
+  },
+  {
+    "from": "/313solar.aspx",
+    "to": "/products/solar/db-4-s"
+  },
+  {
+    "from": "/314Solar.aspx",
+    "to": "/products/solar/erh-s"
+  },
+  {
+    "from": "/314solar.aspx",
+    "to": "/products/solar/erh-s"
+  },
+  {
+    "from": "/315Solar.aspx",
+    "to": "/products/solar/fch-s"
+  },
+  {
+    "from": "/315solar.aspx",
+    "to": "/products/solar/fch-s"
+  },
+  {
+    "from": "/316Solar.aspx",
+    "to": "/products/solar/prototype-production"
+  },
+  {
+    "from": "/316solar.aspx",
+    "to": "/products/solar/prototype-production"
+  },
+  {
+    "from": "/32Automotive.aspx",
+    "to": "/products/automotive"
+  },
+  {
+    "from": "/32automotive.aspx",
+    "to": "/products/automotive"
+  },
+  {
+    "from": "/321Automotive.aspx",
+    "to": "/products/automotive/db-4"
+  },
+  {
+    "from": "/321automotive.aspx",
+    "to": "/products/automotive/db-4"
+  },
+  {
+    "from": "/322Automotive.aspx",
+    "to": "/products/automotive/qs"
+  },
+  {
+    "from": "/322automotive.aspx",
+    "to": "/products/automotive/qs"
+  },
+  {
+    "from": "/323Automotive.aspx",
+    "to": "/products/automotive/sdb-l"
+  },
+  {
+    "from": "/323automotive.aspx",
+    "to": "/products/automotive/sdb-l"
+  },
+  {
+    "from": "/324Automotive.aspx",
+    "to": "/products/automotive/crb"
+  },
+  {
+    "from": "/324automotive.aspx",
+    "to": "/products/automotive/crb"
+  },
+  {
+    "from": "/325Automotive.aspx",
+    "to": "/products/automotive/sdb-t"
+  },
+  {
+    "from": "/325automotive.aspx",
+    "to": "/products/automotive/sdb-t"
+  },
+  {
+    "from": "/326Automotive.aspx",
+    "to": "/products/automotive/epb-l-xl"
+  },
+  {
+    "from": "/326automotive.aspx",
+    "to": "/products/automotive/epb-l-xl"
+  },
+  {
+    "from": "/326XAutomotive.aspx",
+    "to": "/products/automotive/epb-xl"
+  },
+  {
+    "from": "/326xautomotive.aspx",
+    "to": "/products/automotive/epb-xl"
+  },
+  {
+    "from": "/327Automotive.aspx",
+    "to": "/products/automotive/db-4-quick-change"
+  },
+  {
+    "from": "/327automotive.aspx",
+    "to": "/products/automotive/db-4-quick-change"
+  },
+  {
+    "from": "/328Automotive.aspx",
+    "to": "/products/automotive/epb-t-xt"
+  },
+  {
+    "from": "/328automotive.aspx",
+    "to": "/products/automotive/epb-t-xt"
+  },
+  {
+    "from": "/329Automotive.aspx",
+    "to": "/products/automotive/dbx-t"
+  },
+  {
+    "from": "/329automotive.aspx",
+    "to": "/products/automotive/dbx-t"
+  },
+  {
+    "from": "/32LTAutomotive.aspx",
+    "to": "/products/automotive/epb-l-t"
+  },
+  {
+    "from": "/32ltautomotive.aspx",
+    "to": "/products/automotive/epb-l-t"
+  },
+  {
+    "from": "/32XLTAutomotive.aspx",
+    "to": "/products/automotive/epb-xl-t"
+  },
+  {
+    "from": "/32xltautomotive.aspx",
+    "to": "/products/automotive/epb-xl-t"
+  },
+  {
+    "from": "/33Architectural.aspx",
+    "to": "/products/architectural"
+  },
+  {
+    "from": "/33architectural.aspx",
+    "to": "/products/architectural"
+  },
+  {
+    "from": "/331Architectural.aspx",
+    "to": "/products/architectural/abts"
+  },
+  {
+    "from": "/331architectural.aspx",
+    "to": "/products/architectural/abts"
+  },
+  {
+    "from": "/332Architectural.aspx",
+    "to": "/products/architectural/fch2"
+  },
+  {
+    "from": "/332architectural.aspx",
+    "to": "/products/architectural/fch2"
+  },
+  {
+    "from": "/333Architectural.aspx",
+    "to": "/products/architectural/erh2"
+  },
+  {
+    "from": "/333architectural.aspx",
+    "to": "/products/architectural/erh2"
+  },
+  {
+    "from": "/334Architectural.aspx",
+    "to": "/products/architectural/trcb"
+  },
+  {
+    "from": "/334architectural.aspx",
+    "to": "/products/architectural/trcb"
+  },
+  {
+    "from": "/34Aftermarket.aspx",
+    "to": "/products/aftermarket"
+  },
+  {
+    "from": "/34aftermarket.aspx",
+    "to": "/products/aftermarket"
+  },
+  {
+    "from": "/341Aftermarket.aspx",
+    "to": "/products/aftermarket/retrofits"
+  },
+  {
+    "from": "/341aftermarket.aspx",
+    "to": "/products/aftermarket/retrofits"
+  },
+  {
+    "from": "/342Aftermarket.aspx",
+    "to": "/products/aftermarket/replacement-parts"
+  },
+  {
+    "from": "/342aftermarket.aspx",
+    "to": "/products/aftermarket/replacement-parts"
+  },
+  {
+    "from": "/343Aftermarket.aspx",
+    "to": "/products/aftermarket/service"
+  },
+  {
+    "from": "/343aftermarket.aspx",
+    "to": "/products/aftermarket/service"
+  },
+  {
+    "from": "/344Aftermarket.aspx",
+    "to": "/products/aftermarket/tooling"
+  },
+  {
+    "from": "/344aftermarket.aspx",
+    "to": "/products/aftermarket/tooling"
+  },
+  {
+    "from": "/345Aftermarket.aspx",
+    "to": "/products/aftermarket/shape-modeler"
+  },
+  {
+    "from": "/345aftermarket.aspx",
+    "to": "/products/aftermarket/shape-modeler"
+  },
+  {
+    "from": "/346Aftermarket.aspx",
+    "to": "/products/aftermarket/prototype-production"
+  },
+  {
+    "from": "/346aftermarket.aspx",
+    "to": "/products/aftermarket/prototype-production"
+  },
+  {
+    "from": "/Software.aspx",
+    "to": "/inspection"
+  },
+  {
+    "from": "/software.aspx",
+    "to": "/inspection"
+  },
+  {
+    "from": "/71AGIT.aspx",
+    "to": "/inspection/agi-t"
+  },
+  {
+    "from": "/71agit.aspx",
+    "to": "/inspection/agi-t"
+  },
+  {
+    "from": "/71AGIR.aspx",
+    "to": "/inspection/agi-g-r"
+  },
+  {
+    "from": "/71agir.aspx",
+    "to": "/inspection/agi-g-r"
+  },
+  {
+    "from": "/72Software.aspx",
+    "to": "/inspection/shape-modeler"
+  },
+  {
+    "from": "/72software.aspx",
+    "to": "/inspection/shape-modeler"
+  },
+  {
+    "from": "/73Software.aspx",
+    "to": "/inspection/testimonials"
+  },
+  {
+    "from": "/73software.aspx",
+    "to": "/inspection/testimonials"
+  },
+  {
+    "from": "/Support.aspx",
+    "to": "/support"
+  },
+  {
+    "from": "/support.aspx",
+    "to": "/support"
+  },
+  {
+    "from": "/41support.aspx",
+    "to": "/support/service-bulletins"
+  },
+  {
+    "from": "/42support.aspx",
+    "to": "/support/spare-parts-list"
+  },
+  {
+    "from": "/43support.aspx",
+    "to": "/support/download-literature"
+  },
+  {
+    "from": "/newsevents.aspx",
+    "to": "/news-events"
+  },
+  {
+    "from": "/51NewsEvents.aspx",
+    "to": "/news-events/calendar"
+  },
+  {
+    "from": "/51newsevents.aspx",
+    "to": "/news-events/calendar"
+  },
+  {
+    "from": "/52NewsEvents.aspx",
+    "to": "/news-events/newsletter"
+  },
+  {
+    "from": "/52newsevents.aspx",
+    "to": "/news-events/newsletter"
+  },
+  {
+    "from": "/53NewsEvents.aspx",
+    "to": "/news-events/press-releases"
+  },
+  {
+    "from": "/53newsevents.aspx",
+    "to": "/news-events/press-releases"
+  },
+  {
+    "from": "/Contactus.aspx",
+    "to": "/contact"
+  },
+  {
+    "from": "/contactus.aspx",
+    "to": "/contact"
+  },
+  {
+    "from": "/PrivacyPolicy.aspx",
+    "to": "/privacy-policy"
+  },
+  {
+    "from": "/privacypolicy.aspx",
+    "to": "/privacy-policy"
+  },
+  {
+    "from": "/AboutUs.aspx",
+    "to": "/about"
+  },
+  {
+    "from": "/ContactUs.aspx",
+    "to": "/contact"
+  },
+  {
+    "from": "/NewsEvents.aspx",
+    "to": "/news-events"
+  },
+  {
+    "from": "/Newsevents.aspx",
+    "to": "/news-events"
+  },
+  {
+    "from": "/support.aspx",
+    "to": "/support"
+  }
+]

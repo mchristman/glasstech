@@ -1,0 +1,39 @@
+{
+  "aspx": "PrivacyPolicy.aspx",
+  "slug": "/privacy-policy",
+  "title": "Glasstech, Inc. - Privacy Policy",
+  "description": "Glasstech, Inc. Privacy Policy.",
+  "contentHtml": "<h1>Privacy Policy</h1>\n\n<p>Last updated: May 4, 2026</p>\n\n<p>Glasstech, Inc. respects your privacy. This Privacy Policy explains how we collect, use, and protect information when you visit glasstech.com or contact us through the website.</p>\n\n<h2>Information We Collect</h2>\n<p>We may collect information that you choose to provide, such as your name, company name, email address, telephone number, mailing address, and the contents of messages submitted through contact or request forms.</p>\n\n<p>We may also collect basic technical information about visits to our website, such as browser type, device information, referring pages, pages viewed, date and time of access, and general usage information. This information helps us operate, maintain, and improve the website.</p>\n\n<h2>How We Use Information</h2>\n<p>We use information to respond to inquiries, provide requested information about our products and services, support customer communications, improve website content and performance, and protect the security and reliability of our systems.</p>\n\r\n\n<h2>Sharing of Information</h2>\n<p>We do not sell personal information. We may share information with service providers who help us operate the website or support our business, when required by law, or when necessary to protect our rights, safety, or property.</p>\n\n<h2>Data Security</h2>\n<p>We use reasonable administrative, technical, and physical safeguards designed to protect information.</p>\n\n<h2>Links to Other Websites</h2>\n<p>Our website may contain links to third-party websites. Glasstech, Inc. is not responsible for the privacy practices or content of those websites.</p>\n\r\n\n<h2>Contact Us</h2>\n<p>If you have questions about this Privacy Policy, please contact us through our <a href=\"/contact\">Contact Us</a> page or by mail at Glasstech, Inc., Perrysburg, Ohio, USA.</p>",
+  "contentText": "Privacy Policy Last updated: May 4, 2026 Glasstech, Inc. respects your privacy. This Privacy Policy explains how we collect, use, and protect information when you visit glasstech.com or contact us through the website. Information We Collect We may collect information that you choose to provide, such as your name, company name, email address, telephone number, mailing address, and the contents of messages submitted through contact or request forms. We may also collect basic technical information about visits to our website, such as browser type, device information, referring pages, pages viewed, date and time of access, and general usage information. This information helps us operate, maintain, and improve the website. How We Use Information We use information to respond to inquiries, provide requested information about our products and services, support customer communications, improve website content and performance, and protect the security and reliability of our systems. Sharing of Information We do not sell personal information. We may share information with service providers who help us operate the website or support our business, when required by law, or when necessary to protect our rights, safety, or property. Data Security We use reasonable administrative, technical, and physical safeguards designed to protect information. Links to Other Websites Our website may contain links to third-party websites. Glasstech, Inc. is not responsible for the privacy practices or content of those websites. Contact Us If you have questions about this Privacy Policy, please contact us through our Contact Us page or by mail at Glasstech, Inc., Perrysburg, Ohio, USA.",
+  "headings": [
+    {
+      "level": 1,
+      "text": "Privacy Policy"
+    },
+    {
+      "level": 2,
+      "text": "Information We Collect"
+    },
+    {
+      "level": 2,
+      "text": "How We Use Information"
+    },
+    {
+      "level": 2,
+      "text": "Sharing of Information"
+    },
+    {
+      "level": 2,
+      "text": "Data Security"
+    },
+    {
+      "level": 2,
+      "text": "Links to Other Websites"
+    },
+    {
+      "level": 2,
+      "text": "Contact Us"
+    }
+  ],
+  "pdfs": []
+}

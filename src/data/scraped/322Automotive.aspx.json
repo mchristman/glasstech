@@ -1,0 +1,24 @@
+{
+  "aspx": "322Automotive.aspx",
+  "slug": "/products/automotive/qs",
+  "title": "Automotive",
+  "description": "",
+  "contentHtml": "<h1>QS™ Quick Sag Bending & Tempering System</h1>\r\n\t\t\t\t\t\t\t\t<p>The Glasstech Quick Sag system produces high optical quality automotive glass to precise tolerances in simpler shapes. An advanced bending and tempering system, Quick Sag features simple tooling and uses only one forming ring. This results in lower costs and minimal downtime for part changeovers.</p>\t\r\n\t\t\t\t\t\t\t\t<p>The first automotive glass system introduced by Glasstech, Quick Sag was well received by OE glass producers thanks to excellent productivity, finished product quality, yields and reliability.</p>\r\n\t\t\t\t\t\t\t\t<p>A highly flexible system, Quick Sag can be configured in both single-side and double-side models. Coated and tinted glass can be processed without difficulty. And when combined with a cylindrical bender, the system is capable of making both single-curvature and double-curvature parts.</p>",
+  "contentText": "QS™ Quick Sag Bending & Tempering System The Glasstech Quick Sag system produces high optical quality automotive glass to precise tolerances in simpler shapes. An advanced bending and tempering system, Quick Sag features simple tooling and uses only one forming ring. This results in lower costs and minimal downtime for part changeovers. The first automotive glass system introduced by Glasstech, Quick Sag was well received by OE glass producers thanks to excellent productivity, finished product quality, yields and reliability. A highly flexible system, Quick Sag can be configured in both single-side and double-side models. Coated and tinted glass can be processed without difficulty. And when combined with a cylindrical bender, the system is capable of making both single-curvature and double-curvature parts.",
+  "headings": [
+    {
+      "level": 1,
+      "text": "QS™ Quick Sag Bending & Tempering System"
+    }
+  ],
+  "pdfs": [
+    {
+      "href": "/downloads/Automotive3_2/Advanced bending for quick sag 3_2_2/QS_English.pdf",
+      "label": "(English)"
+    },
+    {
+      "href": "/downloads/Automotive3_2/Advanced bending for quick sag 3_2_2/QS_Chinese.pdf",
+      "label": "(Chinese)"
+    }
+  ]
+}

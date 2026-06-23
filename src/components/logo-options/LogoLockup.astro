@@ -1,0 +1,54 @@
+---
+// Shared lockup for logo option previews — matches header Wordmark typography.
+import '@fontsource/archivo/latin-900-italic.css';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<span class:list={['inline-flex items-center gap-2.5 select-none', className]}>
+  <slot name="mark" />
+  <span class="flex flex-col leading-none">
+    <span class="wm-brand text-[1.3rem] text-ink">glasstech</span>
+    <span class="mt-1 text-[0.6rem] font-semibold uppercase tracking-[0.22em] text-muted">
+      Where Innovation Continues
+    </span>
+  </span>
+</span>
+
+<style>
+  .wm-brand {
+    font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: lowercase;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    display: inline-block;
+    padding-right: 0.1em;
+    padding-bottom: 0.12em;
+    margin-right: -0.1em;
+    margin-top: -0.075em;
+    margin-bottom: -0.195em;
+    overflow: visible;
+  }
+
+  @supports (-webkit-background-clip: text) or (background-clip: text) {
+    .wm-brand {
+      background-image: linear-gradient(
+        160deg,
+        #16202c 0%,
+        #45556c 42%,
+        #8c98ab 58%,
+        #323d4e 100%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+  }
+</style>

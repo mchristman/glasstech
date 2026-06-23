@@ -1,0 +1,9 @@
+---
+import ContentPage from '../../components/ContentPage.astro';
+import { getPage } from '../../data/pages';
+
+const page = getPage('/support/training');
+if (!page) return Astro.redirect('/404');
+---
+
+<ContentPage page={page} />

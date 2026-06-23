@@ -1,0 +1,20 @@
+{
+  "aspx": "JobOpportunities.aspx",
+  "slug": "/about/job-opportunities",
+  "title": "Glasstech, Inc. - Job Opportunities",
+  "description": "Glasstech, Inc. - Job Opportunities. The leader in glass tempering and bending euqipment. Servicing the Automotive, Architectural and Solor Markets.",
+  "contentHtml": "<div class=\"subMidCont\">\r\n\t\t\t\t\t\t<div class=\"subMidCopy\">\r\n\t\t\t\t\t\t\t\t<h1>Job Opportunities</h1>\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\r\n\t\t\t\t</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n                \r\n                  \r\n                <div class=\"rightCol\">\r\n                  <div class=\"subSearchHldr\">\r\n                        \r\n\r\n\r\n<div class=\"searchlabel\">Search</div> <a id=\"Search_btnGohidden\" href=\"javascript:__doPostBack(&#39;ctl00$Search$btnGohidden&#39;,&#39;&#39;)\" style=\"display: none;\">hidden</a>\r\n\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\r\n                    </div>\r\n                        \r\n                </div>\r\n                <div class=\"clear\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"clearCopy\">",
+  "contentText": "Job Opportunities Search hidden",
+  "headings": [
+    {
+      "level": 1,
+      "text": "Job Opportunities"
+    }
+  ],
+  "pdfs": [
+    {
+      "href": "/downloads/Jobs/Tech_Service_Engineer_Position.pdf",
+      "label": "Technical Service Engineer"
+    }
+  ]
+}

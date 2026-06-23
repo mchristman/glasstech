@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Page Not Found">
+  <Header slot="header" />
+  <div class="container-x py-28 md:py-36 text-center">
+    <span class="eyebrow">Error 404</span>
+    <h1 class="mt-3 text-5xl md:text-6xl font-bold text-ink">Page not found</h1>
+    <p class="mx-auto mt-5 max-w-md text-body">
+      The page you&rsquo;re looking for doesn&rsquo;t exist or may have moved.
+    </p>
+    <div class="mt-9 flex flex-wrap justify-center gap-3">
+      <a href="/" class="btn btn-primary">Return home</a>
+      <a href="/products" class="btn btn-outline">Browse products</a>
+    </div>
+  </div>
+  <Footer slot="footer" />
+</BaseLayout>

@@ -1,0 +1,20 @@
+{
+  "aspx": "345Aftermarket.aspx",
+  "slug": "/products/aftermarket/shape-modeler",
+  "title": "Aftermarket",
+  "description": "",
+  "contentHtml": "<h1>Shape Modeler<sup>®</sup></h1>\r\n\t\t\t\t\t\t\t\t\r\n<p>Automotive glass designers and glass producers face continuing challenges. For designers, the challenge is to create vehicles that are lighter, more efficient, yet still distinctive. For producers, the challenge is to translate the designers’ styles into distortion-free, cost-effective glass parts.</p>\t\r\n\r\n<p>While conducting glass-forming research, Glasstech developed mathematical models that determine a part design’s transmitted and reflected optical quality when installed at certain angles. Optical quality is strongly dependent on the forming process used and the design’s complexity.</p>\r\n<p>Shape Modeler software makes it easier to analyze customer data and identify the best solution for meeting the design shape. Customers may purchase the software package or contract with Glasstech on a per-simulation basis.</p>",
+  "contentText": "Shape Modeler ® Automotive glass designers and glass producers face continuing challenges. For designers, the challenge is to create vehicles that are lighter, more efficient, yet still distinctive. For producers, the challenge is to translate the designers’ styles into distortion-free, cost-effective glass parts. While conducting glass-forming research, Glasstech developed mathematical models that determine a part design’s transmitted and reflected optical quality when installed at certain angles. Optical quality is strongly dependent on the forming process used and the design’s complexity. Shape Modeler software makes it easier to analyze customer data and identify the best solution for meeting the design shape. Customers may purchase the software package or contract with Glasstech on a per-simulation basis.",
+  "headings": [
+    {
+      "level": 1,
+      "text": "Shape Modeler®"
+    }
+  ],
+  "pdfs": [
+    {
+      "href": "/downloads/Aftermarket 3_4/Shape Modeler English 3_4.pdf",
+      "label": "Click here for more information on Glasstech's Shape Modeler software."
+    }
+  ]
+}

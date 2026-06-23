@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34" fill="none" role="img" aria-label="Glasstech mark  heat arc">
+  <!-- Option 3: Heat Arc  thermal forming gradient on a single bold arc -->
+  <defs>
+    <linearGradient id="opt3-heat" x1="17" y1="27" x2="17" y2="5" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#323d4e" />
+      <stop offset="0.4" stop-color="#45556c" />
+      <stop offset="1" stop-color="#8c98ab" />
+    </linearGradient>
+  </defs>
+  <path
+    d="M 5 25 Q 17 5.5 29 25"
+    stroke="url(#opt3-heat)"
+    stroke-width="3.2"
+    stroke-linecap="round"
+    fill="none"
+  />
+</svg>

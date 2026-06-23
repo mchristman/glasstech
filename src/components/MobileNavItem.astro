@@ -1,0 +1,87 @@
+---
+import type { NavItem } from '../data/navigation';
+
+export interface Props {
+  item: NavItem;
+  depth?: number;
+}
+
+const { item, depth = 0 } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+function isActive(href: string) {
+  if (href === '/') return currentPath === '/';
+  return currentPath === href || currentPath.startsWith(href + '/');
+}
+
+const hasChildren = !!item.children?.length;
+const active = isActive(item.href);
+const regionId = `mnav-${item.href.replace(/[^a-z0-9]+/gi, '-').replace(/(^-|-$)/g, '')}`;
+
+// Toggle/header text styling differs subtly by depth for a clean hierarchy.
+const toggleText =
+  depth === 0
+    ? 'text-sm font-semibold'
+    : 'text-[0.82rem] font-medium';
+// Leaf-link text styling.
+const leafText =
+  depth === 0
+    ? 'text-sm font-semibold'
+    : 'text-[0.85rem]';
+---
+
+{hasChildren ? (
+  <div class="gt-acc-item" data-acc-item>
+    <button
+      type="button"
+      class:list={[
+        'flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2 text-left transition-colors hover:bg-slate-50',
+        toggleText,
+        active ? 'text-ink' : 'text-ink',
+      ]}
+      aria-expanded="false"
+      aria-controls={regionId}
+      data-acc-toggle
+    >
+      <span class="truncate">{item.label}</span>
+      <svg
+        class="gt-chevron h-4 w-4 shrink-0 text-slate-400 transition-transform duration-300"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+    <div id={regionId} class="gt-acc" data-acc-region role="region" aria-label={item.label}>
+      <div>
+        <div class="ml-3 mt-0.5 mb-1.5 space-y-0.5 border-l border-slate-200 pl-3">
+          <a
+            href={item.href}
+            class:list={[
+              'block rounded-md px-3 py-1.5 text-[0.8rem] transition-colors hover:bg-slate-50',
+              active ? 'font-medium text-ink' : 'text-slate-500 hover:text-ink',
+            ]}
+          >
+            {depth === 0 ? `All ${item.label}` : `View ${item.label}`}
+          </a>
+          {item.children!.map((child) => (
+            <Astro.self item={child} depth={depth + 1} />
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+) : (
+  <a
+    href={item.href}
+    class:list={[
+      'block rounded-lg px-3 py-2 transition-colors hover:bg-slate-50',
+      leafText,
+      active ? 'font-medium text-ink' : depth === 0 ? 'text-ink' : 'text-slate-500 hover:text-ink',
+    ]}
+  >
+    {item.label}
+  </a>
+)}

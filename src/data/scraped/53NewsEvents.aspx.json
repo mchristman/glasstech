@@ -1,0 +1,36 @@
+{
+  "aspx": "53NewsEvents.aspx",
+  "slug": "/news-events/press-releases",
+  "title": "News & Events",
+  "description": "",
+  "contentHtml": "<h1>Press Releases</h1> <a href=\"rss/PressReleases.xml\" class=\"feed\" target=\"_blank\">Subscribe to our feed</a>\r\n            <p>Check here regularly for the latest news on Glasstech’s technologies, products and people.</p>",
+  "contentText": "Press Releases Subscribe to our feed Check here regularly for the latest news on Glasstech’s technologies, products and people.",
+  "headings": [
+    {
+      "level": 1,
+      "text": "Press Releases"
+    }
+  ],
+  "pdfs": [
+    {
+      "href": "/downloads/NewsReleases/GLASSNEWS10-13-08.pdf",
+      "label": "October 13, 2008"
+    },
+    {
+      "href": "/downloads/NewsReleases/GLASSNEWS8-15-08.pdf",
+      "label": "August 15, 2008"
+    },
+    {
+      "href": "/downloads/NewsReleases/GLASSNEWS3-19-08.pdf",
+      "label": "March 19, 2008"
+    },
+    {
+      "href": "/downloads/NewsReleases/GLASNEWS1-25-08.pdf",
+      "label": "January 25, 2008"
+    },
+    {
+      "href": "/downloads/NewsReleases/GLASSNEWS1-25-08_2.pdf",
+      "label": "January 25, 2008"
+    }
+  ]
+}

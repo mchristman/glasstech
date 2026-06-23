@@ -1,0 +1,15 @@
+{
+  "page": "51NewsEvents.aspx",
+  "url": "http://www.glasstech.com/51NewsEvents.aspx",
+  "title": "News & Events",
+  "description": "",
+  "h1": "Calendar of Shows",
+  "content": "<div class=\"subMidCopy\">\r\n\t\t<h1>Calendar of Shows</h1>\r\n\t\t\t<P>If you would like to schedule a meeting with a Glasstech representative at any of the listed shows, please contact us at&nbsp;&nbsp; <a href=\"contactus.aspx\" >sales@glasstech.com</a></P>\r\n\r\n\r\n\r\n\r\n\t</div>\t\r\n\t\t\t\t\r\n\t\t\t\t\t\t\r\n\r\n                \r\n                  \r\n                <div class=\"clear\">\r\n                </div>\r\n            </div>\r\n        </div>",
+  "links": [
+    {
+      "href": "contactus.aspx",
+      "text": "sales@glasstech.com"
+    }
+  ],
+  "pdfs": []
+}

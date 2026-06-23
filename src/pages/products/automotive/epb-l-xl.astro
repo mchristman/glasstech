@@ -1,0 +1,378 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+
+const title = 'EPB-L™ | EPB-XL™ External Press Bending System';
+const description =
+  'The Glasstech EPB-L | EPB-XL external press bending system produces bent and annealed automotive windshields, backlites and sunroofs suitable for lamination, with superior optical quality and high productivity.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Products', href: '/products' },
+  { label: 'Automotive', href: '/products/automotive' },
+  { label: 'EPB-L/XL', href: '/products/automotive/epb-l-xl' },
+];
+
+const pdfs = [{ href: '/EPB-L_English.pdf', label: 'EPB-L | EPB-XL System (English)' }];
+
+const productionCapabilities = [
+  'Bent and annealed windshields, backlites and sunroofs suitable for lamination',
+  'Compound, complex-shaped and cylindrical parts',
+  'A single forming tool-set ensures high statistical repeatability',
+  'Total energy consumption is significantly lower than conventional bending systems because the system only heats glass, instead of glass and bending rings',
+  'In the EPB-XL configuration, capable of producing large panorama windshields and sunroofs',
+];
+
+const technicalFeatures = [
+  {
+    name: 'Load Table Positioner',
+    detail:
+      'Incorporates a computer-controlled servo positioning system which ensures correct positioning of inner or outer glass as it enters the heater.',
+  },
+  {
+    name: 'Heater',
+    detail:
+      'The proven heater incorporates an energy-efficient design. Various convection options are available to heat different glass types.',
+  },
+  {
+    name: 'Indexing Conveyor & FanRoll System',
+    detail:
+      'The final heating section is equipped with an indexing conveyor and FanRoll system that pre-forms the glass and rapidly transfers it to the pressing station, minimizing heat loss and improving the optical quality of the part.',
+  },
+  {
+    name: 'Press Station',
+    detail:
+      'Utilizes precision, NC-machined tooling held at a constant temperature for consistent, repeatable quality, plus a full-perimeter press ring. Quick Change tooling and a roll-in/roll-out facility speed changeover, and an optional second press station can be prepared offline.',
+  },
+  {
+    name: 'Annealer / Vacuum Pick-Up',
+    detail:
+      'Patented edge stress control provides edge compression three times higher than traditional methods while maintaining traditional inner band tension, reducing assembly and in-service breakage.',
+  },
+  {
+    name: 'Cooler',
+    detail: 'Requires no ductwork for efficient installation.',
+  },
+  {
+    name: 'PC Interface',
+    detail:
+      'A user-friendly Allen-Bradley ControlLogix™ PLC controller regulates the conveyors, bending motion and part setup data, and provides online help and instant diagnostics.',
+  },
+  {
+    name: 'Unloading Table',
+    detail: 'For manual unloading or transfer to downstream processes.',
+  },
+];
+
+// Product Size and Forming Capability
+const sizeRows = [
+  {
+    model: 'EPB-L',
+    thickness: '1.6 – 2.1',
+    minSizeMm: '890 x 500',
+    minSizeIn: '35 x 20',
+    maxSizeMm: '1220 x 1828',
+    maxSizeIn: '48 x 72',
+    depthMm: '165',
+    depthIn: '6.5',
+    radiusMm: '600',
+    radiusIn: '23.6',
+  },
+  {
+    model: 'EPB-XL',
+    thickness: '1.6 – 2.1',
+    minSizeMm: '890 x 500',
+    minSizeIn: '35 x 20',
+    maxSizeMm: '1600 x 2134',
+    maxSizeIn: '63 x 84',
+    depthMm: '165',
+    depthIn: '6.5',
+    radiusMm: '600',
+    radiusIn: '23.6',
+  },
+];
+
+// Example System Configurations — cycle time (sec) by glass thickness
+const configRows = [
+  { config: 'EPB-L Standard Capacity', m: '21', ft: '68.9', g16: '9', c16: '16.9', g18: '9.8', c18: '19.1', g21: '11.5', c21: '22.4' },
+  { config: 'EPB-L Intermediate Capacity', m: '26.4', ft: '86.7', g16: '9', c16: '12.4', g18: '9', c18: '14', g21: '9', c21: '16.4' },
+  { config: 'EPB-L High Capacity', m: '33.6', ft: '110.7', g16: '9', c16: '9.1', g18: '9', c18: '10.3', g21: '9', c21: '12' },
+  { config: 'EPB-L Coated High Capacity', m: '39.8', ft: '128.7', g16: '9', c16: '9', g18: '9', c18: '9', g21: '9', c21: '10' },
+  { config: 'EPB-XL Standard Capacity', m: '21.2', ft: '69.5', g16: '9.5', c16: '17.2', g18: '10', c18: '19.4', g21: '11.7', c21: '22.7' },
+  { config: 'EPB-XL Intermediate Capacity', m: '26.7', ft: '87.5', g16: '9.5', c16: '12.5', g18: '9.5', c18: '14.1', g21: '9.5', c21: '16.6' },
+  { config: 'EPB-XL High Capacity', m: '34', ft: '111.5', g16: '9.5', c16: '9.5', g18: '9.5', c18: '10.4', g21: '9.5', c21: '12.1' },
+  { config: 'EPB-XL Coated High Capacity', m: '39.5', ft: '129.5', g16: '9.5', c16: '9.5', g18: '9.5', c18: '9.5', g21: '9.5', c21: '10.1' },
+];
+
+// Installed Electric Power (kW)
+const powerRows = [
+  { config: 'EPB-L Standard Capacity', heating: '2200', annealing: '15', cooling: '54', drives: '60', total: '2329' },
+  { config: 'EPB-L Intermediate Capacity', heating: '2690', annealing: '15', cooling: '54', drives: '60', total: '2819' },
+  { config: 'EPB-L High Capacity', heating: '3350', annealing: '15', cooling: '67', drives: '60', total: '3492' },
+  { config: 'EPB-L Coated High Capacity', heating: '3840', annealing: '15', cooling: '67', drives: '60', total: '3982' },
+  { config: 'EPB-XL Standard Capacity', heating: '2660', annealing: '20', cooling: '63', drives: '65', total: '2808' },
+  { config: 'EPB-XL Intermediate Capacity', heating: '3230', annealing: '20', cooling: '63', drives: '65', total: '3378' },
+  { config: 'EPB-XL High Capacity', heating: '4000', annealing: '20', cooling: '78', drives: '65', total: '4163' },
+  { config: 'EPB-XL Coated High Capacity', heating: '4580', annealing: '20', cooling: '78', drives: '65', total: '4743' },
+];
+
+// Floor Space Requirements
+const floorRows = [
+  { config: 'EPB-L Standard Capacity', heaterM: '21', heaterFt: '68.9', totalM: '43.1', totalFt: '141.5', w1M: '12.2', w1Ft: '39.9', w2M: '18', w2Ft: '59', hM: '5.6', hFt: '18.4' },
+  { config: 'EPB-L Intermediate Capacity', heaterM: '26.4', heaterFt: '86.7', totalM: '51.7', totalFt: '169.5', w1M: '12.2', w1Ft: '39.9', w2M: '18', w2Ft: '59', hM: '5.6', hFt: '18.4' },
+  { config: 'EPB-L High Capacity', heaterM: '33.8', heaterFt: '110.7', totalM: '59', totalFt: '193.5', w1M: '12.2', w1Ft: '39.9', w2M: '18', w2Ft: '59', hM: '5.6', hFt: '18.4' },
+  { config: 'EPB-L Coated High Capacity', heaterM: '39.2', heaterFt: '128.7', totalM: '64.5', totalFt: '211.5', w1M: '12.2', w1Ft: '39.9', w2M: '18', w2Ft: '59', hM: '5.6', hFt: '18.4' },
+  { config: 'EPB-XL Standard Capacity', heaterM: '21.2', heaterFt: '69.5', totalM: '46.2', totalFt: '151.5', w1M: '16.8', w1Ft: '55', w2M: '22.2', w2Ft: '73', hM: '5.6', hFt: '18.4' },
+  { config: 'EPB-XL Intermediate Capacity', heaterM: '26.7', heaterFt: '87.5', totalM: '54.7', totalFt: '179.5', w1M: '16.8', w1Ft: '55', w2M: '22.2', w2Ft: '73', hM: '5.6', hFt: '18.4' },
+  { config: 'EPB-XL High Capacity', heaterM: '34', heaterFt: '111.5', totalM: '62', totalFt: '203.5', w1M: '16.8', w1Ft: '55', w2M: '22.2', w2Ft: '73', hM: '5.6', hFt: '18.4' },
+  { config: 'EPB-XL Coated High Capacity', heaterM: '39.5', heaterFt: '129.5', totalM: '67.5', totalFt: '221.5', w1M: '16.8', w1Ft: '55', w2M: '22.2', w2Ft: '73', hM: '5.6', hFt: '18.4' },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <Header slot="header" />
+
+  <PageHeader title={title} eyebrow="Automotive" breadcrumbs={breadcrumbs} market="automotive" />
+
+  <div class="container-x py-12 md:py-16">
+    <div class="prose-glasstech">
+      <p>
+        Glasstech&rsquo;s EPB-L system is an innovative, highly versatile glass bending system designed
+        for the production of automotive laminated windshields and sunroofs. The system satisfies the
+        automotive OEM demand for tighter surface tolerances with superior optical quality, while also
+        meeting the glass processor&rsquo;s need for greater productivity, economical tooling and energy
+        conservation.
+      </p>
+      <p>
+        Designed as an expandable system, the production capabilities of the EPB-L can easily meet
+        production needs. Production capabilities vary, with standard, intermediate and high capacity
+        configurations available. Additionally, coated glass configurations are available to meet the
+        increasing demand for processing high-performance coatings. In the highest capacity
+        configuration, the EPB-L achieves a cycle time of 9.0 seconds for glass singles &mdash; enabling
+        the two parts required for a windshield to be produced every 18 seconds.
+      </p>
+      <p>
+        The system is available in a standard loading area of 1220&nbsp;mm x 1828&nbsp;mm (48&Prime; x
+        72&Prime;) or an expanded loading area of 1600&nbsp;mm x 2134&nbsp;mm (63&Prime; x 84&Prime;).
+      </p>
+      <p>
+        The Glasstech EPB-L utilizes patented features to provide high capability and quality parts. For
+        example, the final heating section is equipped with a FanRoll system that is used to pre-form the
+        glass before it arrives in the pressing station, providing an increase in forming capability. The
+        EPB-L system also utilizes Glasstech&rsquo;s patented edge stress control technology, which
+        increases edge strength while maintaining inner band tension &mdash; helping to reduce
+        installation and in-service breakage.
+      </p>
+
+      <h2>Production Capabilities</h2>
+      <ul>
+        {productionCapabilities.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+
+    <section class="mt-14" aria-labelledby="features-heading">
+      <h2 id="features-heading" class="text-xl md:text-2xl font-semibold text-ink">
+        System Components &amp; Technical Features
+      </h2>
+      <dl class="mt-6 grid gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 sm:grid-cols-2">
+        {technicalFeatures.map((feature) => (
+          <div class="bg-white p-5 sm:p-6">
+            <dt class="text-sm font-semibold text-ink">{feature.name}</dt>
+            <dd class="mt-2 text-sm leading-6 text-body">{feature.detail}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <section class="mt-14" aria-labelledby="specs-heading">
+      <h2 id="specs-heading" class="text-xl md:text-2xl font-semibold text-ink">
+        Technical Specifications
+      </h2>
+
+      <h3 class="mt-8 text-base font-semibold text-ink">Product Size and Forming Capability</h3>
+      <div class="mt-3 overflow-x-auto rounded-xl border border-slate-200">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="bg-slate-50 text-left text-ink">
+              <th class="px-4 py-3 font-semibold" rowspan="2">System</th>
+              <th class="px-4 py-3 font-semibold" rowspan="2">Thickness (mm)</th>
+              <th class="px-4 py-3 font-semibold" colspan="2">Min. Size (L x W)</th>
+              <th class="px-4 py-3 font-semibold" colspan="2">Max. Size (L x W)</th>
+              <th class="px-4 py-3 font-semibold" colspan="2">Depth of Bend</th>
+              <th class="px-4 py-3 font-semibold" colspan="2">Min. Radius</th>
+            </tr>
+            <tr class="bg-slate-50 text-left text-xs uppercase tracking-wide text-muted">
+              <th class="px-4 py-2 font-medium">mm</th>
+              <th class="px-4 py-2 font-medium">in</th>
+              <th class="px-4 py-2 font-medium">mm</th>
+              <th class="px-4 py-2 font-medium">in</th>
+              <th class="px-4 py-2 font-medium">mm</th>
+              <th class="px-4 py-2 font-medium">in</th>
+              <th class="px-4 py-2 font-medium">mm</th>
+              <th class="px-4 py-2 font-medium">in</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sizeRows.map((row) => (
+              <tr class="border-t border-slate-200">
+                <th scope="row" class="px-4 py-3 text-left font-semibold text-ink">{row.model}</th>
+                <td class="px-4 py-3 text-body">{row.thickness}</td>
+                <td class="px-4 py-3 text-body">{row.minSizeMm}</td>
+                <td class="px-4 py-3 text-body">{row.minSizeIn}</td>
+                <td class="px-4 py-3 text-body">{row.maxSizeMm}</td>
+                <td class="px-4 py-3 text-body">{row.maxSizeIn}</td>
+                <td class="px-4 py-3 text-body">{row.depthMm}</td>
+                <td class="px-4 py-3 text-body">{row.depthIn}</td>
+                <td class="px-4 py-3 text-body">{row.radiusMm}</td>
+                <td class="px-4 py-3 text-body">{row.radiusIn}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="mt-10 text-base font-semibold text-ink">Example System Configurations</h3>
+      <p class="mt-2 text-sm text-muted">Cycle time in seconds by glass thickness.</p>
+      <div class="mt-3 overflow-x-auto rounded-xl border border-slate-200">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="bg-slate-50 text-left text-ink">
+              <th class="px-4 py-3 font-semibold" rowspan="2">Configuration</th>
+              <th class="px-4 py-3 font-semibold" colspan="2">Heater Length</th>
+              <th class="px-4 py-3 font-semibold" colspan="2">1.6&nbsp;mm</th>
+              <th class="px-4 py-3 font-semibold" colspan="2">1.8&nbsp;mm</th>
+              <th class="px-4 py-3 font-semibold" colspan="2">2.1&nbsp;mm</th>
+            </tr>
+            <tr class="bg-slate-50 text-left text-xs uppercase tracking-wide text-muted">
+              <th class="px-4 py-2 font-medium">m</th>
+              <th class="px-4 py-2 font-medium">ft</th>
+              <th class="px-4 py-2 font-medium">Green</th>
+              <th class="px-4 py-2 font-medium">Coated*</th>
+              <th class="px-4 py-2 font-medium">Green</th>
+              <th class="px-4 py-2 font-medium">Coated*</th>
+              <th class="px-4 py-2 font-medium">Green</th>
+              <th class="px-4 py-2 font-medium">Coated*</th>
+            </tr>
+          </thead>
+          <tbody>
+            {configRows.map((row) => (
+              <tr class="border-t border-slate-200">
+                <th scope="row" class="px-4 py-3 text-left font-semibold text-ink">{row.config}</th>
+                <td class="px-4 py-3 text-body">{row.m}</td>
+                <td class="px-4 py-3 text-body">{row.ft}</td>
+                <td class="px-4 py-3 text-body">{row.g16}</td>
+                <td class="px-4 py-3 text-body">{row.c16}</td>
+                <td class="px-4 py-3 text-body">{row.g18}</td>
+                <td class="px-4 py-3 text-body">{row.c18}</td>
+                <td class="px-4 py-3 text-body">{row.g21}</td>
+                <td class="px-4 py-3 text-body">{row.c21}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="mt-10 text-base font-semibold text-ink">Installed Electric Power</h3>
+      <div class="mt-3 overflow-x-auto rounded-xl border border-slate-200">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="bg-slate-50 text-left text-ink">
+              <th class="px-4 py-3 font-semibold">Configuration</th>
+              <th class="px-4 py-3 font-semibold">Heating (kW)</th>
+              <th class="px-4 py-3 font-semibold">Annealing (kW)</th>
+              <th class="px-4 py-3 font-semibold">Cooling (kW)</th>
+              <th class="px-4 py-3 font-semibold">Drives (kW)</th>
+              <th class="px-4 py-3 font-semibold">Total (kW)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {powerRows.map((row) => (
+              <tr class="border-t border-slate-200">
+                <th scope="row" class="px-4 py-3 text-left font-semibold text-ink">{row.config}</th>
+                <td class="px-4 py-3 text-body">{row.heating}</td>
+                <td class="px-4 py-3 text-body">{row.annealing}</td>
+                <td class="px-4 py-3 text-body">{row.cooling}</td>
+                <td class="px-4 py-3 text-body">{row.drives}</td>
+                <td class="px-4 py-3 font-medium text-ink">{row.total}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="mt-10 text-base font-semibold text-ink">Floor Space Requirements</h3>
+      <div class="mt-3 overflow-x-auto rounded-xl border border-slate-200">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="bg-slate-50 text-left text-ink">
+              <th class="px-4 py-3 font-semibold" rowspan="2">Configuration</th>
+              <th class="px-4 py-3 font-semibold" colspan="2">Heater Length</th>
+              <th class="px-4 py-3 font-semibold" colspan="2">Total Length</th>
+              <th class="px-4 py-3 font-semibold" colspan="2">Total Width (1 Press)</th>
+              <th class="px-4 py-3 font-semibold" colspan="2">Total Width (2 Presses)</th>
+              <th class="px-4 py-3 font-semibold" colspan="2">Height</th>
+            </tr>
+            <tr class="bg-slate-50 text-left text-xs uppercase tracking-wide text-muted">
+              <th class="px-4 py-2 font-medium">m</th>
+              <th class="px-4 py-2 font-medium">ft</th>
+              <th class="px-4 py-2 font-medium">m</th>
+              <th class="px-4 py-2 font-medium">ft</th>
+              <th class="px-4 py-2 font-medium">m</th>
+              <th class="px-4 py-2 font-medium">ft</th>
+              <th class="px-4 py-2 font-medium">m</th>
+              <th class="px-4 py-2 font-medium">ft</th>
+              <th class="px-4 py-2 font-medium">m</th>
+              <th class="px-4 py-2 font-medium">ft</th>
+            </tr>
+          </thead>
+          <tbody>
+            {floorRows.map((row) => (
+              <tr class="border-t border-slate-200">
+                <th scope="row" class="px-4 py-3 text-left font-semibold text-ink">{row.config}</th>
+                <td class="px-4 py-3 text-body">{row.heaterM}</td>
+                <td class="px-4 py-3 text-body">{row.heaterFt}</td>
+                <td class="px-4 py-3 text-body">{row.totalM}</td>
+                <td class="px-4 py-3 text-body">{row.totalFt}</td>
+                <td class="px-4 py-3 text-body">{row.w1M}</td>
+                <td class="px-4 py-3 text-body">{row.w1Ft}</td>
+                <td class="px-4 py-3 text-body">{row.w2M}</td>
+                <td class="px-4 py-3 text-body">{row.w2Ft}</td>
+                <td class="px-4 py-3 text-body">{row.hM}</td>
+                <td class="px-4 py-3 text-body">{row.hFt}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <p class="mt-4 text-xs leading-5 text-muted">
+        *Requires smart convection option.<br />
+        **Based on a 1&nbsp;m (39.3&Prime;) tall part size; taller parts have extended cycle time.
+      </p>
+    </section>
+
+    <div class="mt-14 rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+      <h2 class="text-xs font-semibold uppercase tracking-[0.16em] text-ink">Downloads</h2>
+      <div class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {pdfs.map((pdf) => (
+          <a
+            href={pdf.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-ink transition-colors hover:border-slate-300"
+          >
+            <span class="flex items-center gap-2.5">
+              <svg class="h-4 w-4 text-brand" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0 4-4m-4 4-4-4M5 19h14"/></svg>
+              {pdf.label}
+            </span>
+            <svg class="h-4 w-4 text-slate-300 transition-colors group-hover:text-brand" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>

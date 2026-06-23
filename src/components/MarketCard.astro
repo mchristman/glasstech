@@ -1,0 +1,45 @@
+---
+import MarketArt from './MarketArt.astro';
+
+interface Props {
+  title: string;
+  href: string;
+  image?: string;
+  description: string;
+  index?: number;
+}
+
+const { title, href, description, index = 0 } = Astro.props;
+
+type Market = 'solar' | 'automotive' | 'architectural' | 'aftermarket';
+const marketKey = (title.toLowerCase() as Market);
+
+const gradients = [
+  'from-[#eef1f6] to-[#dfe5ee]',
+  'from-[#edf0f5] to-[#e2e7f0]',
+  'from-[#eef1f5] to-[#e0e6ef]',
+  'from-[#eff1f5] to-[#e3e8f0]',
+];
+const grad = gradients[index % gradients.length];
+---
+
+<a
+  href={href}
+  class="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_rgba(22,32,44,0.28)] hover:border-slate-300"
+>
+  <div class:list={['relative aspect-[16/10] bg-gradient-to-br overflow-hidden', grad]}>
+    <MarketArt
+      market={marketKey}
+      class="absolute inset-0 h-full w-full transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+      style="transform-origin: 60% 55%;"
+    />
+  </div>
+  <div class="flex flex-1 flex-col p-6">
+    <h3 class="text-lg font-semibold text-ink transition-colors group-hover:text-brand">{title}</h3>
+    <p class="mt-2 text-sm leading-6 text-muted line-clamp-3">{description}</p>
+    <span class="link-arrow mt-5">
+      Explore {title}
+      <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </span>
+  </div>
+</a>

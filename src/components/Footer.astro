@@ -1,0 +1,52 @@
+---
+import { mainNav, offices } from '../data/navigation';
+import Wordmark from './Wordmark.astro';
+
+const year = new Date().getFullYear();
+const columns = mainNav.filter((i) => i.children && i.children.length).slice(0, 4);
+const hq = offices[0];
+---
+
+<footer class="mt-auto border-t border-slate-200 bg-slate-50">
+  <div class="container-x py-14 md:py-16">
+    <div class="grid gap-12 md:grid-cols-12">
+      <div class="md:col-span-4">
+        <Wordmark brand />
+        <p class="mt-5 max-w-xs text-sm leading-6 text-muted">
+          The world leader in glass bending and tempering technology for the solar, automotive and architectural markets.
+        </p>
+        {hq && (
+          <address class="mt-5 not-italic text-sm leading-6 text-muted">
+            {hq.address}<br />
+            <a href={`tel:${hq.phone.replace(/\s/g, '')}`} class="text-brand hover:text-ink transition-colors">{hq.phone}</a>
+          </address>
+        )}
+      </div>
+
+      <div class="md:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
+        {columns.map((col) => (
+          <nav aria-label={col.label}>
+            <h2 class="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-ink">
+              <a href={col.href} class="hover:text-brand transition-colors">{col.label}</a>
+            </h2>
+            <ul class="mt-4 space-y-2.5">
+              {col.children!.slice(0, 6).map((child) => (
+                <li>
+                  <a href={child.href} class="text-sm text-muted hover:text-ink transition-colors">{child.label}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        ))}
+      </div>
+    </div>
+
+    <div class="mt-12 pt-6 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <p class="text-sm text-muted">&copy; {year} Glasstech, Inc. All rights reserved.</p>
+      <div class="flex items-center gap-5 text-sm">
+        <a href="/privacy-policy" class="text-muted hover:text-ink transition-colors">Privacy Policy</a>
+        <a href="/contact" class="text-muted hover:text-ink transition-colors">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>

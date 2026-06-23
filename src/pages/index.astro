@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Section from '../components/Section.astro';
+import MarketCard from '../components/MarketCard.astro';
+import { markets } from '../data/navigation';
+
+const values = [
+  {
+    title: 'Engineering since 1971',
+    body: 'Innovative ideas built our early success — and a new generation of products continues that spirit today.',
+    icon: '<path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="5"/>',
+  },
+  {
+    title: 'Global service network',
+    body: 'Offices in the United States, China and India keep customers supported wherever they operate.',
+    icon: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18"/>',
+  },
+  {
+    title: 'Full lifecycle aftermarket',
+    body: 'Retrofits, parts, tooling and service extend the value of every system long after installation.',
+    icon: '<path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v4h-4"/>',
+  },
+];
+---
+
+<BaseLayout
+  title="Glasstech, Inc. — The leader in glass tempering and bending technology"
+  description="Glasstech, Inc. The leader in glass tempering and bending equipment. Servicing the Automotive, Architectural and Solar Markets."
+>
+  <Header slot="header" />
+
+  <!-- Typographic hero -->
+  <section class="relative overflow-hidden border-b border-slate-200 bg-white">
+    <div class="container-x py-20 md:py-28 lg:py-32">
+      <div class="grid items-center gap-14 lg:grid-cols-12">
+        <div class="lg:col-span-7">
+          <span class="eyebrow">Glass Bending &amp; Tempering Systems</span>
+          <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.04] text-ink">
+            The world leader in glass forming technology.
+          </h1>
+          <p class="mt-6 max-w-xl text-lg leading-8 text-body">
+            Glasstech, Inc. is the world&rsquo;s leading manufacturer of glass bending and tempering
+            technology for the solar, automotive and architectural glass markets.
+          </p>
+          <div class="mt-9 flex flex-wrap items-center gap-3">
+            <a href="/products" class="btn btn-primary">
+              Explore products
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="/contact" class="btn btn-outline">Contact us</a>
+          </div>
+        </div>
+
+        <!-- Abstract "bent glass" motif — pure SVG, no legacy imagery -->
+        <div class="lg:col-span-5">
+          <div class="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-[#eef1f6] via-white to-[#e3e8f1]">
+            <svg class="absolute inset-0 h-full w-full text-brand" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+              <g stroke="currentColor" stroke-linecap="round">
+                <path d="M40 380C40 200 200 40 380 40" stroke-opacity="0.9" stroke-width="2"/>
+                <path d="M90 380C90 235 235 90 380 90" stroke-opacity="0.55" stroke-width="2"/>
+                <path d="M140 380C140 270 270 140 380 140" stroke-opacity="0.4" stroke-width="2"/>
+                <path d="M190 380C190 305 305 190 380 190" stroke-opacity="0.28" stroke-width="2"/>
+                <path d="M240 380C240 340 340 240 380 240" stroke-opacity="0.18" stroke-width="2"/>
+              </g>
+            </svg>
+            <div class="absolute inset-x-0 bottom-0 p-6">
+              <div class="flex items-end justify-between gap-4 rounded-2xl border border-white/70 bg-white/70 px-5 py-4 backdrop-blur">
+                <div>
+                  <p class="text-2xl font-bold text-ink">1971</p>
+                  <p class="text-xs uppercase tracking-[0.16em] text-muted">Founded</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-sm font-semibold text-ink">Perrysburg, Ohio</p>
+                  <p class="text-xs uppercase tracking-[0.16em] text-muted">Headquarters</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Markets -->
+  <Section class="bg-slate-50">
+    <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <span class="eyebrow">Markets we serve</span>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold text-ink">Solutions for every glass market.</h2>
+      </div>
+      <a href="/products" class="link-arrow">
+        View all products
+        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {markets.map((market, i) => (
+        <MarketCard {...market} index={i} />
+      ))}
+    </div>
+    <p class="mt-8 text-sm text-muted">
+      Looking for quality control?{' '}
+      <a href="/inspection" class="link-arrow align-baseline">Explore our inspection systems</a>
+    </p>
+  </Section>
+
+  <!-- About teaser -->
+  <Section>
+    <div class="grid items-center gap-12 lg:grid-cols-2">
+      <div>
+        <span class="eyebrow">About Glasstech</span>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold text-ink">A spirit of innovation, sustained.</h2>
+        <p class="mt-6 text-body leading-8">
+          Innovative ideas and concepts were largely responsible for Glasstech&rsquo;s early success,
+          after the company&rsquo;s founding in 1971. Today, that spirit of innovation continues as a
+          new generation of products is being brought to market.
+        </p>
+        <p class="mt-4 text-body leading-8">
+          From precisely bent solar reflectors to large architectural lites and high-volume automotive
+          glazing, our systems are engineered to be rugged, dependable and versatile.
+        </p>
+        <a href="/about" class="link-arrow mt-7">
+          More about us
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <figure class="media-frame aspect-[4/3] w-full">
+        <picture>
+          <source srcset="/images/about-glasstech.webp" type="image/webp" />
+          <img
+            src="/images/about-glasstech.jpg"
+            alt="Glasstech facility in Perrysburg, Ohio"
+            class="h-full w-full object-cover object-center"
+            width="1200"
+            height="900"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+      </figure>
+    </div>
+  </Section>
+
+  <!-- Values -->
+  <Section class="bg-slate-50">
+    <div class="grid gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 sm:grid-cols-3">
+      {values.map((v) => (
+        <div class="bg-white p-8">
+          <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-slate-50 text-brand ring-1 ring-slate-200">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" set:html={v.icon}></svg>
+          </span>
+          <h3 class="mt-5 text-base font-semibold text-ink">{v.title}</h3>
+          <p class="mt-2 text-sm leading-6 text-muted">{v.body}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- Conversion CTA -->
+  <section class="bg-brand-900">
+    <div class="container-x py-16 md:py-20">
+      <div class="flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
+        <div class="max-w-2xl">
+          <h2 class="text-3xl md:text-4xl font-bold text-white">Ready to discuss your glass forming requirements?</h2>
+          <p class="mt-4 text-lg leading-8 text-white/70">
+            Our team welcomes your questions about products, capabilities and aftermarket support.
+          </p>
+        </div>
+        <a href="/contact" class="btn btn-accent shrink-0">
+          Contact us
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

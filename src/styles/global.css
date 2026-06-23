@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand slate-blue family */
+  --color-brand: #45556c;
+  --color-brand-600: #3c4a5e;
+  --color-brand-700: #323d4e;
+  --color-brand-900: #1e2733;
+
+  /* Neutral ink + body */
+  --color-ink: #16202c;
+  --color-body: #4b5563;
+  --color-muted: #6b7280;
+
+  /* Single restrained accent — use sparingly */
+  --color-accent: #b3282e;
+  --color-accent-hover: #9c2026;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* Tighter heading tracking baked into a custom value */
+  --tracking-tightest: -0.03em;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-white text-body font-sans antialiased;
+    font-feature-settings: "cv05", "ss01";
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    @apply text-ink font-semibold;
+    letter-spacing: var(--tracking-tightest);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Accessible focus ring across all interactive elements */
+  :where(a, button, input, select, textarea, [tabindex]):focus-visible {
+    @apply outline-none ring-2 ring-brand/70 ring-offset-2 ring-offset-white rounded-sm;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-brand) 22%, transparent);
+    color: var(--color-ink);
+  }
+}
+
+@layer components {
+  /* ---- Layout primitives ---- */
+  .container-x {
+    @apply max-w-6xl mx-auto px-5 sm:px-8 lg:px-10;
+  }
+
+  .eyebrow {
+    @apply inline-block text-xs font-semibold uppercase text-brand;
+    letter-spacing: 0.18em;
+  }
+
+  .hairline {
+    @apply border-slate-200;
+  }
+
+  /* ---- Buttons ---- */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-ink text-white hover:bg-brand-900;
+  }
+
+  /* Reserve the red accent strictly for primary conversion CTAs */
+  .btn-accent {
+    @apply bg-accent text-white hover:bg-accent-hover;
+  }
+
+  .btn-outline {
+    @apply border border-slate-300 text-ink hover:border-ink hover:bg-slate-50;
+  }
+
+  .link-arrow {
+    @apply inline-flex items-center gap-1.5 text-sm font-medium text-brand transition-colors hover:text-ink;
+  }
+
+  /* ---- Form fields ---- */
+  .field-label {
+    @apply mb-1.5 block text-sm font-medium text-ink;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-ink transition-colors;
+    @apply placeholder:text-slate-400 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/35;
+  }
+
+  /* ---- Imagery treatment: make legacy JPGs look intentional ---- */
+  .img-duotone {
+    filter: grayscale(1) contrast(1.05) brightness(1.02);
+    mix-blend-mode: luminosity;
+  }
+
+  .media-frame {
+    @apply relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-100;
+  }
+
+  /* ---- Prose for scraped content ---- */
+  .prose-glasstech {
+    @apply text-body leading-7 text-[0.975rem];
+    max-width: 68ch;
+
+    h1 { @apply text-3xl md:text-4xl mb-6 text-ink; }
+    h2 { @apply text-xl md:text-2xl mt-10 mb-4 text-ink; }
+    h3 { @apply text-lg mt-8 mb-3 text-ink; }
+
+    p { @apply mb-5; }
+
+    ul, ol { @apply mb-5 ml-5 space-y-2; }
+    ul { @apply list-disc marker:text-slate-400; }
+    ol { @apply list-decimal marker:text-slate-400; }
+
+    a:not(.btn) {
+      @apply text-brand underline underline-offset-4 decoration-slate-300 hover:decoration-brand transition-colors;
+    }
+
+    img {
+      @apply my-6 rounded-xl border border-slate-200 max-w-full h-auto;
+    }
+
+    strong { @apply text-ink font-semibold; }
+
+    hr { @apply my-10 border-slate-200; }
+
+    table {
+      @apply w-full border-collapse my-6 text-sm;
+    }
+    th, td {
+      @apply border-b border-slate-200 px-4 py-3 text-left align-top;
+    }
+    th {
+      @apply text-ink font-semibold;
+    }
+  }
+}

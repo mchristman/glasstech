@@ -1,0 +1,41 @@
+---
+import Breadcrumb from './Breadcrumb.astro';
+import MarketArt from './MarketArt.astro';
+
+type Market = 'solar' | 'automotive' | 'architectural' | 'aftermarket' | 'inspection';
+
+interface Props {
+  title: string;
+  eyebrow?: string;
+  breadcrumbs?: { label: string; href: string }[];
+  market?: Market;
+}
+
+const { title, eyebrow, breadcrumbs, market } = Astro.props;
+---
+
+<header class="border-b border-slate-200 bg-slate-50">
+  <div class="container-x py-10 md:py-14">
+    {breadcrumbs && breadcrumbs.length > 1 && (
+      <div class="mb-6"><Breadcrumb items={breadcrumbs} /></div>
+    )}
+    {market ? (
+      <div class="flex flex-col gap-8 md:flex-row md:items-center md:justify-between md:gap-12">
+        <div class="md:flex-1">
+          {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+          <h1 class:list={['text-3xl md:text-5xl font-bold text-ink', eyebrow ? 'mt-3' : '']}>{title}</h1>
+        </div>
+        <div class="md:flex-1 md:max-w-md" aria-hidden="true">
+          <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-[#eef1f6] to-[#dfe5ee] aspect-[16/9] md:aspect-[3/2]">
+            <MarketArt market={market} class="absolute inset-0 h-full w-full" />
+          </div>
+        </div>
+      </div>
+    ) : (
+      <>
+        {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+        <h1 class:list={['text-3xl md:text-5xl font-bold text-ink', eyebrow ? 'mt-3' : '']}>{title}</h1>
+      </>
+    )}
+  </div>
+</header>

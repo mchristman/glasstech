@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { offices } from '../data/navigation';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Contact', href: '/contact' },
+];
+---
+
+<BaseLayout title="Contact Us" description="Contact Glasstech, Inc. — The leader in glass tempering and bending equipment.">
+  <Header slot="header" />
+
+  <PageHeader title="Contact us" eyebrow="Get in touch" breadcrumbs={breadcrumbs} />
+
+  <div class="container-x py-12 md:py-16">
+    <div class="grid gap-14 lg:grid-cols-5">
+      <div class="lg:col-span-3">
+        <h2 class="text-2xl font-semibold text-ink">Send us a message</h2>
+        <div class="mt-6">
+          <ContactForm />
+        </div>
+      </div>
+
+      <div class="lg:col-span-2">
+        <h2 class="text-2xl font-semibold text-ink">Our offices</h2>
+        <div class="mt-6 space-y-4">
+          {offices.map((office) => (
+            <div class="rounded-2xl border border-slate-200 bg-white p-5">
+              <div class="flex items-baseline justify-between gap-3">
+                <h3 class="font-semibold text-ink">{office.name}</h3>
+                <span class="text-xs font-medium uppercase tracking-[0.12em] text-brand">{office.city}</span>
+              </div>
+              <p class="mt-2 text-sm leading-6 text-muted">{office.address}</p>
+              <p class="mt-2 text-sm text-muted">
+                <span class="font-medium text-ink">Phone</span>{' '}
+                <a href={`tel:${office.phone.replace(/\s/g, '')}`} class="text-brand hover:text-ink transition-colors">{office.phone}</a>
+              </p>
+              {office.fax && (
+                <p class="mt-1 text-sm text-muted">
+                  <span class="font-medium text-ink">Fax</span>{' '}
+                  <a href={`tel:${office.fax.replace(/\s/g, '')}`} class="text-brand hover:text-ink transition-colors">{office.fax}</a>
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>
