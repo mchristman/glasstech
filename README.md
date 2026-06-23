@@ -93,7 +93,7 @@ Contactus.aspx        → /contact
 
 ### 5. Contact form
 
-The contact form opens the visitor's default email client with a pre-filled message to `michael.d.christman@gmail.com`. No server-side form handler is required.
+The contact form opens the visitor's default email client with a pre-filled message to `updateme@glasstech.com`. No server-side form handler is required.
 
 ## Re-scraping Content
 
