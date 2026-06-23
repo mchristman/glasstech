@@ -20,7 +20,7 @@ glasstech-website/
 │   ├── components/     # Header, Footer, MarketCard, ContactForm, etc.
 │   ├── data/           # Navigation, URL map, scraped page content
 │   ├── layouts/        # BaseLayout
-│   ├── pages/          # 56 static routes (auto-generated + custom)
+│   ├── pages/          # 54 static routes (auto-generated + custom)
 │   └── styles/         # Tailwind theme with Glasstech brand colors
 ├── public/
 │   ├── downloads/      # Product literature PDFs (synced from legacy site)
@@ -35,7 +35,7 @@ glasstech-website/
 └── dist/                    # Production build output
 ```
 
-## Pages (56 total)
+## Pages (54 total)
 
 | Section | Routes |
 |---------|--------|

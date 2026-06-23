@@ -87,11 +87,28 @@ const removedPageRedirects = [
   { from: 'support/download-literature', name: 'Removed support download-literature page' },
 ];
 
+const pdfRedirects = [
+  {
+    from: 'EPB-L_English\\.pdf',
+    to: '/downloads/Automotive3_2/EPB%203_2_6/EPB-L_English.pdf',
+    name: 'Moved EPB-L English PDF',
+  },
+];
+
 const removedRules = removedPageRedirects
   .map(
     ({ from, name }) => `        <rule name="${name}" stopProcessing="true">
           <match url="^${from}/?$" ignoreCase="true" />
           <action type="Redirect" url="/support/" redirectType="Permanent" />
+        </rule>`,
+  )
+  .join('\n');
+
+const pdfRules = pdfRedirects
+  .map(
+    ({ from, to, name }) => `        <rule name="${name}" stopProcessing="true">
+          <match url="^${from}$" ignoreCase="true" />
+          <action type="Redirect" url="${to}" redirectType="Permanent" />
         </rule>`,
   )
   .join('\n');
@@ -103,6 +120,7 @@ const config = `<?xml version="1.0" encoding="UTF-8"?>
       <rules>
 ${rules}
 ${removedRules}
+${pdfRules}
         <!-- Catch-all for any remaining .aspx requests -->
         <rule name="Redirect legacy aspx fallback" stopProcessing="true">
           <match url="(.*)\\.aspx$" ignoreCase="true" />
