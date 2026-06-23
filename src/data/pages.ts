@@ -49,8 +49,26 @@ function mapLegacyAspxHref(filename: string): string {
   return mapped ?? `/${filename}`;
 }
 
+function isInternalHref(href: string): boolean {
+  if (!href || href.startsWith('#')) return false;
+  if (/^(mailto:|tel:|javascript:)/i.test(href)) return false;
+  if (/^https?:\/\//i.test(href)) return false;
+  return true;
+}
+
+function stripNewTabFromInternalLinks(html: string): string {
+  return html.replace(/<a\b([^>]*)>/gi, (match, attrs) => {
+    const hrefMatch = attrs.match(/\bhref\s*=\s*["']([^"']+)["']/i);
+    if (!hrefMatch || !isInternalHref(hrefMatch[1])) return match;
+    const cleaned = attrs
+      .replace(/\s*target\s*=\s*["'][^"']*["']/gi, '')
+      .replace(/\s*rel\s*=\s*["'][^"']*["']/gi, '');
+    return `<a${cleaned}>`;
+  });
+}
+
 function fixContentPaths(html: string): string {
-  return html
+  const withPaths = html
     .replace(/src="images\//g, 'src="/images/')
     .replace(/src="downloads\//g, 'src="/downloads/')
     .replace(/href="downloads\//g, 'href="/downloads/')
@@ -66,6 +84,8 @@ function fixContentPaths(html: string): string {
       const filename = raw.split('/').pop() ?? raw;
       return `href="${mapLegacyAspxHref(filename)}"`;
     });
+
+  return stripNewTabFromInternalLinks(withPaths);
 }
 
 // Friendly breadcrumb labels for slugs that don't title-case cleanly

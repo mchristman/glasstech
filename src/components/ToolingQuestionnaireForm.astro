@@ -1,0 +1,334 @@
+---
+---
+
+<div id="tooling-questionnaire-root">
+  <form id="tooling-questionnaire-form" class="space-y-8">
+    <p class="text-sm leading-6 text-muted">
+      Complete this questionnaire to request a custom tooling quote. Fields marked with <span class="text-accent">*</span> are required.
+    </p>
+
+    <fieldset class="space-y-5 border-0 p-0">
+      <legend class="text-base font-semibold text-ink">I. General Information</legend>
+
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label for="part-name" class="field-label">Part Name <span class="text-accent">*</span></label>
+          <input type="text" id="part-name" name="partName" required class="field" />
+        </div>
+        <div>
+          <label for="model-name" class="field-label">Model Name <span class="text-accent">*</span></label>
+          <input type="text" id="model-name" name="modelName" required class="field" />
+        </div>
+      </div>
+
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label for="customer" class="field-label">Glasstech Customer <span class="text-accent">*</span></label>
+          <input type="text" id="customer" name="customer" required class="field" />
+        </div>
+        <div>
+          <label for="contact" class="field-label">Contact <span class="text-accent">*</span></label>
+          <input type="text" id="contact" name="contact" required class="field" />
+        </div>
+      </div>
+
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label for="phone" class="field-label">Phone Number <span class="text-accent">*</span></label>
+          <input type="tel" id="phone" name="phone" required class="field" />
+          <p class="mt-1.5 text-xs text-muted">If international, please include country code</p>
+        </div>
+        <div>
+          <label for="fax" class="field-label">Fax Number</label>
+          <input type="tel" id="fax" name="fax" class="field" />
+        </div>
+      </div>
+
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label for="email" class="field-label">Email <span class="text-accent">*</span></label>
+          <input type="email" id="email" name="email" required class="field" />
+        </div>
+        <div>
+          <label for="location" class="field-label">Customer Location <span class="text-accent">*</span></label>
+          <input type="text" id="location" name="location" required class="field" />
+        </div>
+      </div>
+
+      <div>
+        <label for="furnace-number" class="field-label">Furnace Number <span class="text-accent">*</span></label>
+        <input type="text" id="furnace-number" name="furnaceNumber" required class="field sm:max-w-xs" />
+      </div>
+    </fieldset>
+
+    <fieldset class="space-y-5 border-0 p-0">
+      <legend class="text-base font-semibold text-ink">II. Part Specifications</legend>
+
+      <div>
+        <label for="surface-probes" class="field-label">Quantity &amp; Location of All Surface Probes</label>
+        <textarea id="surface-probes" name="surfaceProbes" rows="3" class="field resize-y"></textarea>
+      </div>
+
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label for="probe-tolerance" class="field-label">Tolerance on All Surface Probes</label>
+          <input type="text" id="probe-tolerance" name="probeTolerance" class="field" />
+        </div>
+        <div>
+          <label for="glass-thickness" class="field-label">Glass Thickness</label>
+          <input type="text" id="glass-thickness" name="glassThickness" class="field" />
+        </div>
+      </div>
+
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label for="glass-color" class="field-label">Glass Color</label>
+          <input type="text" id="glass-color" name="glassColor" class="field" />
+        </div>
+        <div>
+          <label for="hole-diameter" class="field-label">Hole Diameter</label>
+          <input type="text" id="hole-diameter" name="holeDiameter" class="field" />
+        </div>
+      </div>
+
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label for="installation-angle" class="field-label">Installation Angle From the Horizontal</label>
+          <input type="text" id="installation-angle" name="installationAngle" class="field" />
+        </div>
+        <div>
+          <label for="perimeter-tolerance" class="field-label">Perimeter Off Form Tolerance</label>
+          <input type="text" id="perimeter-tolerance" name="perimeterTolerance" class="field" />
+        </div>
+      </div>
+
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label for="edge-marking" class="field-label">Acceptable Marking From Edge of Glass</label>
+          <input type="text" id="edge-marking" name="edgeMarking" class="field" />
+        </div>
+        <div>
+          <label for="perimeter-rate" class="field-label">Perimeter Rate of Change</label>
+          <input type="text" id="perimeter-rate" name="perimeterRate" class="field" />
+        </div>
+      </div>
+
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label for="crossbend" class="field-label">Crossbend and Tolerance (SAG)</label>
+          <input type="text" id="crossbend" name="crossbend" class="field" />
+        </div>
+        <div>
+          <label for="fracture-standard" class="field-label">Fracture Standard</label>
+          <select id="fracture-standard" name="fractureStandard" class="field">
+            <option value="">Select standard</option>
+            <option value="Z-26">Z-26</option>
+            <option value="ECE R43">ECE R43</option>
+            <option value="JIS-R-321">JIS-R-321</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label for="optical-requirements" class="field-label">Optical Requirements</label>
+        <textarea id="optical-requirements" name="opticalRequirements" rows="3" class="field resize-y"></textarea>
+      </div>
+
+      <div>
+        <label for="prove-out-samples" class="field-label">Number of Samples Required During Prove Out</label>
+        <input type="text" id="prove-out-samples" name="proveOutSamples" class="field sm:max-w-xs" />
+      </div>
+    </fieldset>
+
+    <fieldset class="space-y-5 border-0 p-0">
+      <legend class="text-base font-semibold text-ink">III. Customer Glass Checking Fixtures</legend>
+
+      <div>
+        <label for="standoff-pins" class="field-label">Stand-off Pin Location and Height</label>
+        <textarea
+          id="standoff-pins"
+          name="standoffPins"
+          rows="3"
+          class="field resize-y"
+          placeholder="If checking fixtures use stand-off pins, include location and height of all pins."
+        ></textarea>
+      </div>
+    </fieldset>
+
+    <fieldset class="space-y-5 border-0 p-0">
+      <legend class="text-base font-semibold text-ink">IV. Math Data Requirements</legend>
+
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label for="math-format" class="field-label">Required Math Data Format</label>
+          <select id="math-format" name="mathFormat" class="field">
+            <option value="">Select format</option>
+            <option value="IGES">IGES</option>
+            <option value="CATIA v4 wireframe">CATIA v4 wireframe</option>
+            <option value="CATIA v4 surface including perimeter">CATIA v4 surface including perimeter</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="surface-type" class="field-label">Data Represents</label>
+          <select id="surface-type" name="surfaceType" class="field">
+            <option value="">Select surface</option>
+            <option value="Inside surface of the glass">Inside surface of the glass</option>
+            <option value="Outside surface of the glass">Outside surface of the glass</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label for="math-notes" class="field-label">Math Data Notes</label>
+        <textarea
+          id="math-notes"
+          name="mathNotes"
+          rows="3"
+          class="field resize-y"
+          placeholder="Include paint band and heater data if applicable."
+        ></textarea>
+      </div>
+    </fieldset>
+
+    <div class="flex flex-wrap gap-3 pt-1">
+      <button type="submit" class="btn btn-accent">Submit</button>
+      <button type="reset" class="btn btn-outline">Clear form</button>
+    </div>
+
+    <p class="text-xs text-muted">Submit opens your email app with a pre-filled message.</p>
+  </form>
+
+  <div
+    id="tooling-questionnaire-thank-you"
+    hidden
+    class="rounded-2xl border border-slate-200 bg-slate-50/60 px-6 py-10 sm:px-8"
+    role="status"
+    aria-live="polite"
+  >
+    <div class="mx-auto max-w-md text-center">
+      <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-white border border-slate-200" aria-hidden="true">
+        <svg class="h-6 w-6 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <h3 id="tooling-questionnaire-thank-you-heading" tabindex="-1" class="mt-5 text-xl font-semibold text-ink">
+        Thank you for your submission
+      </h3>
+      <p class="mt-3 text-sm leading-7 text-muted">
+        Your email app should have opened with your tooling questionnaire. Please send the email to complete your submission.
+      </p>
+      <p class="mt-4 text-sm leading-7 text-muted">
+        If your email app did not open, you can reach us directly at{' '}
+        <a href="mailto:tooling@glasstech.com" class="text-brand hover:text-ink transition-colors">
+          tooling@glasstech.com
+        </a>.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const TOOLING_EMAIL = 'tooling@glasstech.com';
+
+  const form = document.getElementById('tooling-questionnaire-form') as HTMLFormElement | null;
+  const thankYou = document.getElementById('tooling-questionnaire-thank-you');
+  const thankYouHeading = document.getElementById('tooling-questionnaire-thank-you-heading');
+
+  function getField(formData: FormData, name: string): string {
+    return String(formData.get(name) ?? '').trim();
+  }
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const formData = new FormData(form);
+    const contact = getField(formData, 'contact');
+    const partName = getField(formData, 'partName');
+    const modelName = getField(formData, 'modelName');
+    const customer = getField(formData, 'customer');
+    const phone = getField(formData, 'phone');
+    const fax = getField(formData, 'fax');
+    const email = getField(formData, 'email');
+    const location = getField(formData, 'location');
+    const furnaceNumber = getField(formData, 'furnaceNumber');
+
+    const subject = `Glasstech Tooling Questionnaire from ${contact}`;
+
+    const lines = [
+      'Glasstech Tool Design Questionnaire',
+      '===================================',
+      '',
+      'I. GENERAL INFORMATION',
+      '----------------------',
+      `Part Name: ${partName}`,
+      `Model Name: ${modelName}`,
+      `Glasstech Customer: ${customer}`,
+      `Contact: ${contact}`,
+      `Phone Number: ${phone}`,
+    ];
+
+    if (fax) lines.push(`Fax Number: ${fax}`);
+
+    lines.push(
+      `Email: ${email}`,
+      `Customer Location: ${location}`,
+      `Furnace Number: ${furnaceNumber}`,
+      '',
+      'II. PART SPECIFICATIONS',
+      '----------------------',
+    );
+
+    const specFields: [string, string][] = [
+      ['Quantity & Location of All Surface Probes', getField(formData, 'surfaceProbes')],
+      ['Tolerance on All Surface Probes', getField(formData, 'probeTolerance')],
+      ['Glass Thickness', getField(formData, 'glassThickness')],
+      ['Glass Color', getField(formData, 'glassColor')],
+      ['Hole Diameter', getField(formData, 'holeDiameter')],
+      ['Installation Angle From the Horizontal', getField(formData, 'installationAngle')],
+      ['Perimeter Off Form Tolerance', getField(formData, 'perimeterTolerance')],
+      ['Acceptable Marking From Edge of Glass', getField(formData, 'edgeMarking')],
+      ['Perimeter Rate of Change', getField(formData, 'perimeterRate')],
+      ['Crossbend and Tolerance (SAG)', getField(formData, 'crossbend')],
+      ['Fracture Standard', getField(formData, 'fractureStandard')],
+      ['Optical Requirements', getField(formData, 'opticalRequirements')],
+      ['Number of Samples Required During Prove Out', getField(formData, 'proveOutSamples')],
+    ];
+
+    for (const [label, value] of specFields) {
+      if (value) lines.push(`${label}: ${value}`);
+    }
+
+    const standoffPins = getField(formData, 'standoffPins');
+    if (standoffPins) {
+      lines.push('', 'III. CUSTOMER GLASS CHECKING FIXTURES', '-----------------------------------', standoffPins);
+    }
+
+    const mathFormat = getField(formData, 'mathFormat');
+    const surfaceType = getField(formData, 'surfaceType');
+    const mathNotes = getField(formData, 'mathNotes');
+
+    if (mathFormat || surfaceType || mathNotes) {
+      lines.push('', 'IV. MATH DATA REQUIREMENTS', '--------------------------');
+      if (mathFormat) lines.push(`Required Math Data Format: ${mathFormat}`);
+      if (surfaceType) lines.push(`Data Represents: ${surfaceType}`);
+      if (mathNotes) lines.push('', 'Notes:', mathNotes);
+    }
+
+    const body = lines.join('\n');
+    const mailto = `mailto:${TOOLING_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailto;
+
+    form.hidden = true;
+    if (thankYou) {
+      thankYou.hidden = false;
+    }
+    thankYouHeading?.focus();
+  });
+</script>

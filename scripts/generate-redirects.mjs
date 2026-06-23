@@ -69,6 +69,7 @@ const urlMap = {
   'Contactus.aspx': '/contact',
   'ContactUs.aspx': '/contact',
   'BRequest.aspx': '/contact',
+  'ToolQ.aspx': '/products/aftermarket/tooling/questionnaire',
   'PrivacyPolicy.aspx': '/privacy-policy',
 };
 
