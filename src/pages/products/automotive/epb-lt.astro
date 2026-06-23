@@ -1,9 +1,3 @@
 ---
-import ContentPage from '../../../components/ContentPage.astro';
-import { getPage } from '../../../data/pages';
-
-const page = getPage('/products/automotive/epb-lt');
-if (!page) return Astro.redirect('/404');
+return Astro.redirect('/products/automotive/epb-l-t');
 ---
-
-<ContentPage page={page} />

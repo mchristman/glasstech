@@ -1,0 +1,111 @@
+---
+import AutomotiveArtVariant from './AutomotiveArtVariant.astro';
+import type { AutomotiveVariant } from './automotiveScenes';
+
+interface Props {
+  variant: AutomotiveVariant;
+  label: string;
+  title: string;
+  description: string;
+  isCurrent?: boolean;
+}
+
+const { variant, label, title, description, isCurrent = false } = Astro.props;
+
+const cardGrad = 'from-[#eef1f6] to-[#dfe5ee]';
+const smallWidths = [32, 48, 80, 120] as const;
+---
+
+<article class="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+  <div class="px-5 py-4 border-b border-slate-100 bg-white">
+    <div class="flex items-baseline justify-between gap-3 flex-wrap">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand">
+          {label}
+          {isCurrent && (
+            <span class="ml-2 normal-case tracking-normal font-medium text-muted">(live site)</span>
+          )}
+        </p>
+        <h2 class="text-lg font-semibold text-ink mt-0.5">{title}</h2>
+      </div>
+    </div>
+    <p class="text-sm text-muted mt-2">{description}</p>
+  </div>
+
+  <div class="border-b border-slate-200 bg-slate-50">
+    <p class="px-5 pt-4 pb-2 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-muted">
+      Category page header
+    </p>
+    <div class="px-5 pb-5">
+      <div class="rounded-xl border border-slate-200 bg-slate-50 overflow-hidden">
+        <div class="px-4 py-5 sm:px-5">
+          <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+            <div class="sm:flex-1 min-w-0">
+              <span class="eyebrow">Automotive</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-ink mt-2 truncate">
+                Automotive Glass Bending
+              </h3>
+            </div>
+            <div class="sm:flex-1 sm:max-w-[220px] w-full shrink-0">
+              <div
+                class:list={[
+                  'relative overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br aspect-[16/9]',
+                  cardGrad,
+                ]}
+              >
+                <AutomotiveArtVariant variant={variant} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-b border-slate-200">
+    <p class="px-5 pt-4 pb-2 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-muted">
+      Homepage market tile
+    </p>
+    <div class="px-5 pb-5">
+      <div class="rounded-2xl border border-slate-200 bg-white overflow-hidden max-w-xs">
+        <div class:list={['relative aspect-[16/10] bg-gradient-to-br overflow-hidden', cardGrad]}>
+          <AutomotiveArtVariant
+            variant={variant}
+            class="absolute inset-0 h-full w-full"
+            style="transform-origin: 60% 55%;"
+          />
+        </div>
+        <div class="p-4">
+          <h3 class="text-base font-semibold text-ink">Automotive</h3>
+          <p class="mt-1.5 text-sm leading-6 text-muted line-clamp-2">
+            Precision bending systems for windshields, backlites, and specialty automotive glass.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="px-5 py-5 bg-slate-50/80">
+    <p class="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-muted mb-3">
+      Art at small sizes
+    </p>
+    <div class="flex flex-wrap items-end gap-5">
+      {
+        smallWidths.map((width) => (
+          <div class="flex flex-col items-center gap-1.5">
+            <div
+              class:list={[
+                'relative overflow-hidden rounded border border-slate-200 bg-gradient-to-br',
+                cardGrad,
+              ]}
+              style={`width: ${width}px; aspect-ratio: 16 / 10;`}
+            >
+              <AutomotiveArtVariant variant={variant} />
+            </div>
+            <span class="text-[0.6rem] text-muted tabular-nums">{width}px</span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</article>

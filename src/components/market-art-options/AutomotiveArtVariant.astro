@@ -1,0 +1,26 @@
+---
+import { automotiveScenes, type AutomotiveVariant } from './automotiveScenes';
+
+interface Props {
+  variant: AutomotiveVariant;
+  class?: string;
+  style?: string;
+}
+
+const { variant, class: className = 'absolute inset-0 h-full w-full', style } = Astro.props;
+const scene = automotiveScenes[variant];
+---
+
+<svg
+  class:list={['text-brand', className]}
+  style={style}
+  viewBox="0 0 320 200"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  preserveAspectRatio="xMidYMid slice"
+  aria-hidden="true"
+  set:html={scene}
+></svg>

@@ -49,16 +49,6 @@ glasstech-website/
 | Privacy | `/privacy-policy` |
 | 404 | `/404` |
 
-## Environment Variables
-
-Copy `.env.example` to `.env` and configure:
-
-| Variable | Description |
-|----------|-------------|
-| `PUBLIC_CONTACT_FORM_ENDPOINT` | URL for contact form POST handler |
-
-The contact form UI is built but requires IT to configure an endpoint (e.g. Formspree, Azure Function, or custom API). Without this, the form displays a configuration message on submit.
-
 ## Deployment to IIS
 
 ### 1. Build the site
@@ -103,14 +93,7 @@ Contactus.aspx        → /contact
 
 ### 5. Contact form
 
-Set up a form handler endpoint and configure:
-
-```bash
-# In .env before build, or as IIS environment variable
-PUBLIC_CONTACT_FORM_ENDPOINT=https://your-form-handler.example.com/submit
-```
-
-Rebuild after setting the variable since Astro inlines `PUBLIC_*` vars at build time.
+The contact form opens the visitor's default email client with a pre-filled message to `michael.d.christman@gmail.com`. No server-side form handler is required.
 
 ## Re-scraping Content
 

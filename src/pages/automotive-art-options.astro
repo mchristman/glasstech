@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AutomotiveArtOptionCard from '../components/market-art-options/AutomotiveArtOptionCard.astro';
+import type { AutomotiveVariant } from '../components/market-art-options/automotiveScenes';
+
+interface Option {
+  variant: AutomotiveVariant;
+  label: string;
+  title: string;
+  description: string;
+  isCurrent?: boolean;
+}
+
+const options: Option[] = [
+  {
+    variant: 'current',
+    label: 'Current',
+    title: 'Windshield & Conveyor',
+    description:
+      'Curved windshield lite cross-section over a forming-line conveyor with roller dots — the scene live on the site today.',
+    isCurrent: true,
+  },
+  {
+    variant: '1',
+    label: 'Option A',
+    title: 'Side Silhouette',
+    description:
+      'Clean sedan side profile — a bold curved glass canopy (windshield + roofline) over a subtle body outline and wheel hints.',
+  },
+  {
+    variant: '2',
+    label: 'Option B',
+    title: 'Front Three-Quarter',
+    description:
+      'Iconic front 3/4 angle with converging hood lines and a large curved windshield — unmistakably automotive in a few strokes.',
+  },
+  {
+    variant: '3',
+    label: 'Option C',
+    title: 'Glass on Body',
+    description:
+      'Simplified car body with belt line and wheel arches — an exaggerated formed windshield lite sits on top, tying glass forming to the vehicle.',
+  },
+  {
+    variant: '4',
+    label: 'Option D',
+    title: 'Coupe Profile',
+    description:
+      'Low sporty fastback with a long sweeping roofline and windshield arc — high contrast and readable even at tile size.',
+  },
+];
+---
+
+<BaseLayout
+  title="Automotive Art Options — Glasstech"
+  description="Internal preview of alternative automotive MarketArt scene concepts."
+>
+  <div class="border-b border-slate-200 bg-slate-50">
+    <div class="container-x py-10 sm:py-14">
+      <p class="eyebrow mb-3">Internal preview</p>
+      <h1 class="text-3xl sm:text-4xl text-ink font-semibold tracking-tightest mb-3">
+        Automotive market art — options
+      </h1>
+      <p class="text-body max-w-2xl text-pretty">
+        Four car-forward directions for the automotive MarketArt scene, shown in realistic header
+        and homepage tile mockups. The live site still uses the current windshield &amp; conveyor scene
+        — pick a favorite here and we&rsquo;ll swap it into
+        <code class="text-xs bg-slate-100 px-1.5 py-0.5 rounded">MarketArt.astro</code>.
+      </p>
+    </div>
+  </div>
+
+  <div class="container-x py-10 sm:py-14">
+    <div class="grid gap-10 lg:grid-cols-2">
+      {
+        options.map((option) => (
+          <AutomotiveArtOptionCard
+            variant={option.variant}
+            label={option.label}
+            title={option.title}
+            description={option.description}
+            isCurrent={option.isCurrent}
+          />
+        ))
+      }
+    </div>
+
+    <p class="mt-12 text-sm text-muted text-center">
+      Tell us which option you prefer (A, B, C, or D — or keep Current) and we&rsquo;ll update
+      <code class="text-xs bg-slate-100 px-1.5 py-0.5 rounded">MarketArt.astro</code>.
+    </p>
+  </div>
+</BaseLayout>

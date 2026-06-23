@@ -1,112 +1,158 @@
 ---
-const endpoint = import.meta.env.PUBLIC_CONTACT_FORM_ENDPOINT || '';
 ---
 
-<form id="contact-form" class="space-y-5">
-  <p class="text-sm leading-6 text-muted">
-    Tell us what you think about our website, products, organization or anything else that comes to mind. We welcome all of your comments and questions.
-  </p>
+<div id="contact-form-root">
+  <form id="contact-form" class="space-y-5">
+    <p class="text-sm leading-6 text-muted">
+      Tell us what you think about our website, products, organization or anything else that comes to mind. We welcome all of your comments and questions.
+    </p>
 
-  <div class="grid gap-5 sm:grid-cols-2">
-    <div>
-      <label for="name" class="field-label">Name <span class="text-accent">*</span></label>
-      <input type="text" id="name" name="name" required class="field" />
+    <div class="grid gap-5 sm:grid-cols-2">
+      <div>
+        <label for="name" class="field-label">Name <span class="text-accent">*</span></label>
+        <input type="text" id="name" name="name" required class="field" />
+      </div>
+      <div>
+        <label for="company" class="field-label">Company <span class="text-accent">*</span></label>
+        <input type="text" id="company" name="company" required class="field" />
+      </div>
     </div>
+
+    <div class="grid gap-5 sm:grid-cols-2">
+      <div>
+        <label for="country" class="field-label">Country <span class="text-accent">*</span></label>
+        <select id="country" name="country" required class="field">
+          <option value="">Select country</option>
+          <option value="USA">United States</option>
+          <option value="China">China</option>
+          <option value="India">India</option>
+          <option value="Canada">Canada</option>
+          <option value="Germany">Germany</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div>
+        <label for="product" class="field-label">Product Line</label>
+        <select id="product" name="product" class="field">
+          <option value="">Select product line</option>
+          <option value="Automotive">Automotive</option>
+          <option value="Architectural">Architectural</option>
+          <option value="Aftermarket">Aftermarket</option>
+          <option value="Solar">Solar</option>
+          <option value="Inspection">Inspection</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid gap-5 sm:grid-cols-2">
+      <div>
+        <label for="email" class="field-label">Email <span class="text-accent">*</span></label>
+        <input type="email" id="email" name="email" required class="field" />
+      </div>
+      <div>
+        <label for="phone" class="field-label">Phone <span class="text-accent">*</span></label>
+        <input type="tel" id="phone" name="phone" required class="field" />
+        <p class="mt-1.5 text-xs text-muted">If international, please include country code</p>
+      </div>
+    </div>
+
     <div>
-      <label for="company" class="field-label">Company <span class="text-accent">*</span></label>
-      <input type="text" id="company" name="company" required class="field" />
+      <label for="message" class="field-label">Comments or Questions</label>
+      <textarea id="message" name="message" rows="5" class="field resize-y"></textarea>
+    </div>
+
+    <div class="flex flex-wrap gap-3 pt-1">
+      <button type="submit" class="btn btn-accent">Submit</button>
+      <button type="reset" class="btn btn-outline">Clear form</button>
+    </div>
+
+    <p class="text-xs text-muted">Submit opens your email app with a pre-filled message.</p>
+  </form>
+
+  <div
+    id="contact-thank-you"
+    hidden
+    class="rounded-2xl border border-slate-200 bg-slate-50/60 px-6 py-10 sm:px-8"
+    role="status"
+    aria-live="polite"
+  >
+    <div class="mx-auto max-w-md text-center">
+      <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-white border border-slate-200" aria-hidden="true">
+        <svg class="h-6 w-6 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <h3 id="contact-thank-you-heading" tabindex="-1" class="mt-5 text-xl font-semibold text-ink">
+        Thank you for your message
+      </h3>
+      <p class="mt-3 text-sm leading-7 text-muted">
+        Your email app should have opened with your inquiry. Please send the email to complete your submission.
+      </p>
+      <p class="mt-4 text-sm leading-7 text-muted">
+        If your email app did not open, you can reach us directly at{' '}
+        <a href="mailto:michael.d.christman@gmail.com" class="text-brand hover:text-ink transition-colors">
+          michael.d.christman@gmail.com
+        </a>.
+      </p>
     </div>
   </div>
+</div>
 
-  <div class="grid gap-5 sm:grid-cols-2">
-    <div>
-      <label for="country" class="field-label">Country <span class="text-accent">*</span></label>
-      <select id="country" name="country" required class="field">
-        <option value="">Select country</option>
-        <option value="USA">United States</option>
-        <option value="China">China</option>
-        <option value="India">India</option>
-        <option value="Canada">Canada</option>
-        <option value="Germany">Germany</option>
-        <option value="United Kingdom">United Kingdom</option>
-        <option value="Other">Other</option>
-      </select>
-    </div>
-    <div>
-      <label for="product" class="field-label">Product Line</label>
-      <select id="product" name="product" class="field">
-        <option value="">Select product line</option>
-        <option value="Automotive">Automotive</option>
-        <option value="Architectural">Architectural</option>
-        <option value="Aftermarket">Aftermarket</option>
-        <option value="Solar">Solar</option>
-        <option value="Inspection">Inspection</option>
-      </select>
-    </div>
-  </div>
+<script>
+  const CONTACT_EMAIL = 'michael.d.christman@gmail.com';
 
-  <div class="grid gap-5 sm:grid-cols-2">
-    <div>
-      <label for="email" class="field-label">Email <span class="text-accent">*</span></label>
-      <input type="email" id="email" name="email" required class="field" />
-    </div>
-    <div>
-      <label for="phone" class="field-label">Phone <span class="text-accent">*</span></label>
-      <input type="tel" id="phone" name="phone" required class="field" />
-      <p class="mt-1.5 text-xs text-muted">If international, please include country code</p>
-    </div>
-  </div>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const thankYou = document.getElementById('contact-thank-you');
+  const thankYouHeading = document.getElementById('contact-thank-you-heading');
 
-  <div>
-    <label for="message" class="field-label">Comments or Questions</label>
-    <textarea id="message" name="message" rows="5" class="field resize-y"></textarea>
-  </div>
-
-  <div class="flex flex-wrap gap-3 pt-1">
-    <button type="submit" class="btn btn-accent">Submit</button>
-    <button type="reset" class="btn btn-outline">Clear form</button>
-  </div>
-
-  <p id="form-status" class="text-sm hidden"></p>
-</form>
-
-<script define:vars={{ endpoint }}>
-  const form = document.getElementById('contact-form');
-  const status = document.getElementById('form-status');
-
-  form?.addEventListener('submit', async (e) => {
+  form?.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (!endpoint) {
-      status.textContent = 'Contact form endpoint not configured. Please set PUBLIC_CONTACT_FORM_ENDPOINT in your environment.';
-      status.className = 'text-sm text-accent';
-      status.classList.remove('hidden');
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
       return;
     }
 
     const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
+    const name = String(formData.get('name') ?? '').trim();
+    const company = String(formData.get('company') ?? '').trim();
+    const country = String(formData.get('country') ?? '').trim();
+    const product = String(formData.get('product') ?? '').trim();
+    const email = String(formData.get('email') ?? '').trim();
+    const phone = String(formData.get('phone') ?? '').trim();
+    const message = String(formData.get('message') ?? '').trim();
 
-    try {
-      status.textContent = 'Sending...';
-      status.className = 'text-sm text-brand';
-      status.classList.remove('hidden');
+    const subject = `Glasstech Website Inquiry from ${name}`;
 
-      const res = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
+    const lines = [
+      'Glasstech Website Contact Form',
+      '==============================',
+      '',
+      `Name: ${name}`,
+      `Company: ${company}`,
+      `Country: ${country}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+    ];
 
-      if (res.ok) {
-        status.textContent = 'Thank you! Your message has been sent.';
-        status.className = 'text-sm text-green-700';
-        form.reset();
-      } else {
-        throw new Error('Submission failed');
-      }
-    } catch {
-      status.textContent = 'Unable to send message. Please try again or contact us directly by phone.';
-      status.className = 'text-sm text-accent';
+    if (product) {
+      lines.push(`Product Line: ${product}`);
     }
+
+    if (message) {
+      lines.push('', 'Message:', message);
+    }
+
+    const body = lines.join('\n');
+    const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailto;
+
+    form.hidden = true;
+    if (thankYou) {
+      thankYou.hidden = false;
+    }
+    thankYouHeading?.focus();
   });
 </script>
