@@ -61,6 +61,7 @@ export const urlMap: Record<string, string> = {
   '73Software.aspx': '/inspection/shape-modeler',
   'Contactus.aspx': '/contact',
   'ContactUs.aspx': '/contact',
+  'BRequest.aspx': '/contact',
   'PrivacyPolicy.aspx': '/privacy-policy',
 };
 

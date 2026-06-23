@@ -41,6 +41,14 @@ function fixPdfHref(href: string): string | null {
   return normalized;
 }
 
+function mapLegacyAspxHref(filename: string): string {
+  const mapped =
+    urlMap[filename] ??
+    urlMap[filename.charAt(0).toUpperCase() + filename.slice(1)] ??
+    urlMap[filename.toLowerCase()];
+  return mapped ?? `/${filename}`;
+}
+
 function fixContentPaths(html: string): string {
   return html
     .replace(/src="images\//g, 'src="/images/')
@@ -54,17 +62,9 @@ function fixContentPaths(html: string): string {
       ),
       '',
     )
-    .replace(/href="(\d+\w+\.aspx)"/gi, (_, p) => {
-      const mapped = urlMap[p] ?? urlMap[p.charAt(0).toUpperCase() + p.slice(1)];
-      return mapped ? `href="${mapped}"` : `href="/${p}"`;
-    })
-    .replace(/href="(Aboutus|Contactus|Products|Support|Software|newsevents|PrivacyPolicy)\.aspx"/gi, (_, p) => {
-      const key = p.charAt(0).toUpperCase() + p.slice(1).replace('us', 'us') + '.aspx';
-      const variants = [key, p + '.aspx', p.charAt(0).toUpperCase() + p.slice(1) + '.aspx'];
-      for (const v of variants) {
-        if (urlMap[v]) return `href="${urlMap[v]}"`;
-      }
-      return `href="/${p.toLowerCase()}"`;
+    .replace(/href="([^"#?]+\.aspx)"/gi, (_, raw) => {
+      const filename = raw.split('/').pop() ?? raw;
+      return `href="${mapLegacyAspxHref(filename)}"`;
     });
 }
 
