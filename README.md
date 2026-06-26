@@ -49,6 +49,33 @@ glasstech-website/
 | Privacy | `/privacy-policy` |
 | 404 | `/404` |
 
+## Cloudflare deployment
+
+The site deploys automatically to Cloudflare Workers on every push to `main` via [`.github/workflows/deploy-cloudflare.yml`](.github/workflows/deploy-cloudflare.yml). You can also trigger a deploy manually from the GitHub Actions tab (**Deploy to Cloudflare** → **Run workflow**).
+
+### Required GitHub secrets
+
+Add these in the repository settings under **Settings → Secrets and variables → Actions**:
+
+| Secret | Description |
+|--------|-------------|
+| `CLOUDFLARE_API_TOKEN` | Cloudflare API token with permission to deploy Workers |
+| `CLOUDFLARE_ACCOUNT_ID` | Your Cloudflare account ID ([dashboard](https://dash.cloudflare.com/) → right sidebar) |
+
+### Create a Cloudflare API token
+
+1. Open [Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens) → **Create Token**.
+2. Use the **Edit Cloudflare Workers** template, or create a custom token with at least:
+   - **Account → Workers Scripts → Edit**
+   - **Account → Account Settings → Read**
+3. Copy the token into the `CLOUDFLARE_API_TOKEN` GitHub secret.
+
+After the first successful deploy, map your custom domain in the Cloudflare dashboard (Workers & Pages → `glasstech-website` → **Settings → Domains & Routes**).
+
+### GitHub Pages
+
+If GitHub Pages is still enabled on this repo, it may run Jekyll builds that fail on Astro output. Disable Pages under **Settings → Pages** if you no longer need it.
+
 ## Deployment to IIS
 
 ### 1. Build the site
