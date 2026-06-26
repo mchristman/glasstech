@@ -60,7 +60,7 @@ Add these in the repository settings under **Settings → Secrets and variables 
 | Secret | Description |
 |--------|-------------|
 | `CLOUDFLARE_API_TOKEN` | Cloudflare API token with permission to deploy Workers |
-| `CLOUDFLARE_ACCOUNT_ID` | Your Cloudflare account ID ([dashboard](https://dash.cloudflare.com/) → right sidebar) |
+| `CLOUDFLARE_ACCOUNT_ID` | Optional. Only needed if deploy fails to resolve an account from the API token. Use the **Account ID** from the [dashboard](https://dash.cloudflare.com/) sidebar (32-character hex), not a zone ID. |
 
 ### Create a Cloudflare API token
 
@@ -70,7 +70,7 @@ Add these in the repository settings under **Settings → Secrets and variables 
    - **Account → Account Settings → Read**
 3. Copy the token into the `CLOUDFLARE_API_TOKEN` GitHub secret.
 
-After the first successful deploy, map your custom domain in the Cloudflare dashboard (Workers & Pages → `glasstech-website` → **Settings → Domains & Routes**).
+After the first successful deploy, map your custom domain in the Cloudflare dashboard (Workers & Pages → `glasstech` → **Settings → Domains & Routes**).
 
 ### GitHub Pages
 
