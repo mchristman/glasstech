@@ -8,16 +8,22 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "npm run build && wrangler dev",
     "astro": "astro",
     "scrape": "node scripts/scrape.mjs",
-    "generate": "node scripts/generate-pages.mjs && node scripts/generate-redirects.mjs"
+    "generate": "node scripts/generate-pages.mjs && node scripts/generate-redirects.mjs",
+    "generate-types": "wrangler types",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^14.0.0",
     "@astrojs/sitemap": "^3.7.3",
     "@fontsource/archivo": "^5.2.8",
     "@tailwindcss/vite": "^4.3.1",
     "astro": "^7.0.0",
     "tailwindcss": "^4.3.1"
+  },
+  "devDependencies": {
+    "wrangler": "^4.104.0"
   }
 }
