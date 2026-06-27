@@ -72,6 +72,16 @@ Add these in the repository settings under **Settings → Secrets and variables 
 
 After the first successful deploy, map your custom domain in the Cloudflare dashboard (Workers & Pages → `glasstech` → **Settings → Domains & Routes**).
 
+### Web analytics (optional)
+
+Every page renders Open Graph/Twitter card tags, a canonical URL and `Organization` JSON-LD (see `src/layouts/BaseLayout.astro`). To also capture traffic with [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/):
+
+1. Cloudflare dashboard → **Analytics & Logs → Web Analytics** → add `glasstech.com` as a site → copy the beacon token from the generated snippet.
+2. Repo → **Settings → Secrets and variables → Actions → Variables** → add `PUBLIC_CF_BEACON_TOKEN` with that token (it's not a secret — it ends up in the public page HTML — but it must be set as a build-time variable since `deploy-cloudflare.yml` passes it to `npm run build`).
+3. For local builds, set the same value in `.env`.
+
+Leave it unset to skip the analytics beacon entirely.
+
 ### GitHub Pages
 
 If GitHub Pages is still enabled on this repo, it may run Jekyll builds that fail on Astro output. Disable Pages under **Settings → Pages** if you no longer need it.
