@@ -72,9 +72,13 @@ Add these in the repository settings under **Settings → Secrets and variables 
 
 After the first successful deploy, map your custom domain in the Cloudflare dashboard (Workers & Pages → `glasstech` → **Settings → Domains & Routes**).
 
+### Search engine indexing
+
+The site currently ships `noindex, nofollow` on every page and `Disallow: /` in `robots.txt` (see `src/layouts/BaseLayout.astro` and `public/robots.txt`), so it won't be picked up by Google or other crawlers while it's not ready for the public. Remove both before launch.
+
 ### Web analytics (optional)
 
-Every page renders Open Graph/Twitter card tags, a canonical URL and `Organization` JSON-LD (see `src/layouts/BaseLayout.astro`). To also capture traffic with [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/):
+To capture traffic with [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/):
 
 1. Cloudflare dashboard → **Analytics & Logs → Web Analytics** → add `glasstech.com` as a site → copy the beacon token from the generated snippet.
 2. Repo → **Settings → Secrets and variables → Actions → Variables** → add `PUBLIC_CF_BEACON_TOKEN` with that token (it's not a secret — it ends up in the public page HTML — but it must be set as a build-time variable since `deploy-cloudflare.yml` passes it to `npm run build`).
@@ -157,7 +161,6 @@ npm run build
 - [Astro 5](https://astro.build/) — static site generator
 - [Tailwind CSS 4](https://tailwindcss.com/) — utility-first styling
 - [Inter](https://fonts.google.com/specimen/Inter) — typography
-- [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/) — auto-generated sitemap
 
 ## License
 
