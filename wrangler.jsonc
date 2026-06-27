@@ -6,15 +6,7 @@
 	"main": "@astrojs/cloudflare/entrypoints/server",
 	"assets": {
 		"directory": "./dist",
-		"binding": "ASSETS",
-		"run_worker_first": [
-			"/*.aspx",
-			"/EPB-L_English.pdf",
-			"/support/training",
-			"/support/training/",
-			"/support/download-literature",
-			"/support/download-literature/"
-		]
+		"binding": "ASSETS"
 	},
 	"observability": {
 		"enabled": true
