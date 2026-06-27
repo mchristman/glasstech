@@ -68,7 +68,15 @@ export const urlMap: Record<string, string> = {
 
 export function legacyToClean(legacyUrl: string): string {
   const filename = legacyUrl.split('/').pop()?.split('?')[0] ?? legacyUrl;
-  return urlMap[filename] ?? urlMap[filename.toLowerCase()] ?? '/';
+  const directMatch = urlMap[filename] ?? urlMap[filename.toLowerCase()];
+  if (directMatch) return directMatch;
+
+  const lowerFilename = filename.toLowerCase();
+  const caseInsensitiveMatch = Object.entries(urlMap).find(([legacyFilename]) => {
+    return legacyFilename.toLowerCase() === lowerFilename;
+  });
+
+  return caseInsensitiveMatch?.[1] ?? '/';
 }
 
 export function cleanUrl(path: string): string {

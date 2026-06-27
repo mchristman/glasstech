@@ -136,3 +136,31 @@ test('tooling questionnaire API route rejects an empty submission instead of cra
 
   assert.equal(response.status, 400);
 });
+
+test('legacy contact URL redirects in the Worker runtime', async () => {
+  const response = await fetch(`${BASE_URL}/Contactus.aspx`, { redirect: 'manual' });
+
+  assert.equal(response.status, 301);
+  assert.equal(response.headers.get('location'), '/contact/');
+});
+
+test('legacy tooling questionnaire URL redirects in the Worker runtime', async () => {
+  const response = await fetch(`${BASE_URL}/ToolQ.aspx`, { redirect: 'manual' });
+
+  assert.equal(response.status, 301);
+  assert.equal(response.headers.get('location'), '/products/aftermarket/tooling/questionnaire/');
+});
+
+test('unknown legacy aspx URL redirects to the homepage in the Worker runtime', async () => {
+  const response = await fetch(`${BASE_URL}/DoesNotExist.aspx`, { redirect: 'manual' });
+
+  assert.equal(response.status, 301);
+  assert.equal(response.headers.get('location'), '/');
+});
+
+test('moved EPB PDF redirects in the Worker runtime', async () => {
+  const response = await fetch(`${BASE_URL}/EPB-L_English.pdf`, { redirect: 'manual' });
+
+  assert.equal(response.status, 301);
+  assert.equal(response.headers.get('location'), '/downloads/Automotive3_2/EPB%203_2_6/EPB-L_English.pdf');
+});
