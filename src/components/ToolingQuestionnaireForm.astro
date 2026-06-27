@@ -195,8 +195,6 @@
       <button type="submit" class="btn btn-accent">Submit</button>
       <button type="reset" class="btn btn-outline">Clear form</button>
     </div>
-
-    <p class="text-xs text-muted">Submit opens your email app with a pre-filled message.</p>
   </form>
 
   <div
@@ -216,30 +214,23 @@
         Thank you for your submission
       </h3>
       <p class="mt-3 text-sm leading-7 text-muted">
-        Your email app should have opened with your tooling questionnaire. Please send the email to complete your submission.
-      </p>
-      <p class="mt-4 text-sm leading-7 text-muted">
-        If your email app did not open, you can reach us directly at{' '}
-        <a href="mailto:tooling@glasstech.com" class="text-brand hover:text-ink transition-colors">
-          tooling@glasstech.com
-        </a>.
+        We've received your tooling questionnaire and will get back to you shortly.
       </p>
     </div>
   </div>
+
+  <p id="tooling-questionnaire-error" hidden class="mt-4 text-sm text-accent" role="alert">
+    Something went wrong submitting your questionnaire. Please try again.
+  </p>
 </div>
 
 <script>
-  const TOOLING_EMAIL = 'tooling@glasstech.com';
-
   const form = document.getElementById('tooling-questionnaire-form') as HTMLFormElement | null;
   const thankYou = document.getElementById('tooling-questionnaire-thank-you');
   const thankYouHeading = document.getElementById('tooling-questionnaire-thank-you-heading');
+  const errorMessage = document.getElementById('tooling-questionnaire-error');
 
-  function getField(formData: FormData, name: string): string {
-    return String(formData.get(name) ?? '').trim();
-  }
-
-  form?.addEventListener('submit', (e) => {
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     if (!form.checkValidity()) {
@@ -247,88 +238,30 @@
       return;
     }
 
-    const formData = new FormData(form);
-    const contact = getField(formData, 'contact');
-    const partName = getField(formData, 'partName');
-    const modelName = getField(formData, 'modelName');
-    const customer = getField(formData, 'customer');
-    const phone = getField(formData, 'phone');
-    const fax = getField(formData, 'fax');
-    const email = getField(formData, 'email');
-    const location = getField(formData, 'location');
-    const furnaceNumber = getField(formData, 'furnaceNumber');
+    if (errorMessage) errorMessage.hidden = true;
 
-    const subject = `Glasstech Tooling Questionnaire from ${contact}`;
+    const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+    if (submitButton) submitButton.disabled = true;
 
-    const lines = [
-      'Glasstech Tool Design Questionnaire',
-      '===================================',
-      '',
-      'I. GENERAL INFORMATION',
-      '----------------------',
-      `Part Name: ${partName}`,
-      `Model Name: ${modelName}`,
-      `Glasstech Customer: ${customer}`,
-      `Contact: ${contact}`,
-      `Phone Number: ${phone}`,
-    ];
+    try {
+      const response = await fetch('/api/tooling-questionnaire', {
+        method: 'POST',
+        body: new FormData(form),
+      });
 
-    if (fax) lines.push(`Fax Number: ${fax}`);
+      if (!response.ok) {
+        throw new Error('Request failed');
+      }
 
-    lines.push(
-      `Email: ${email}`,
-      `Customer Location: ${location}`,
-      `Furnace Number: ${furnaceNumber}`,
-      '',
-      'II. PART SPECIFICATIONS',
-      '----------------------',
-    );
-
-    const specFields: [string, string][] = [
-      ['Quantity & Location of All Surface Probes', getField(formData, 'surfaceProbes')],
-      ['Tolerance on All Surface Probes', getField(formData, 'probeTolerance')],
-      ['Glass Thickness', getField(formData, 'glassThickness')],
-      ['Glass Color', getField(formData, 'glassColor')],
-      ['Hole Diameter', getField(formData, 'holeDiameter')],
-      ['Installation Angle From the Horizontal', getField(formData, 'installationAngle')],
-      ['Perimeter Off Form Tolerance', getField(formData, 'perimeterTolerance')],
-      ['Acceptable Marking From Edge of Glass', getField(formData, 'edgeMarking')],
-      ['Perimeter Rate of Change', getField(formData, 'perimeterRate')],
-      ['Crossbend and Tolerance (SAG)', getField(formData, 'crossbend')],
-      ['Fracture Standard', getField(formData, 'fractureStandard')],
-      ['Optical Requirements', getField(formData, 'opticalRequirements')],
-      ['Number of Samples Required During Prove Out', getField(formData, 'proveOutSamples')],
-    ];
-
-    for (const [label, value] of specFields) {
-      if (value) lines.push(`${label}: ${value}`);
+      form.hidden = true;
+      if (thankYou) {
+        thankYou.hidden = false;
+      }
+      thankYouHeading?.focus();
+    } catch (error) {
+      console.error('Failed to submit tooling questionnaire', error);
+      if (errorMessage) errorMessage.hidden = false;
+      if (submitButton) submitButton.disabled = false;
     }
-
-    const standoffPins = getField(formData, 'standoffPins');
-    if (standoffPins) {
-      lines.push('', 'III. CUSTOMER GLASS CHECKING FIXTURES', '-----------------------------------', standoffPins);
-    }
-
-    const mathFormat = getField(formData, 'mathFormat');
-    const surfaceType = getField(formData, 'surfaceType');
-    const mathNotes = getField(formData, 'mathNotes');
-
-    if (mathFormat || surfaceType || mathNotes) {
-      lines.push('', 'IV. MATH DATA REQUIREMENTS', '--------------------------');
-      if (mathFormat) lines.push(`Required Math Data Format: ${mathFormat}`);
-      if (surfaceType) lines.push(`Data Represents: ${surfaceType}`);
-      if (mathNotes) lines.push('', 'Notes:', mathNotes);
-    }
-
-    const body = lines.join('\n');
-    const mailto = `mailto:${TOOLING_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    window.location.href = mailto;
-
-    form.hidden = true;
-    if (thankYou) {
-      thankYou.hidden = false;
-    }
-    thankYouHeading?.focus();
   });
 </script>

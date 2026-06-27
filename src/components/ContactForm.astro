@@ -66,8 +66,6 @@
       <button type="submit" class="btn btn-accent">Submit</button>
       <button type="reset" class="btn btn-outline">Clear form</button>
     </div>
-
-    <p class="text-xs text-muted">Submit opens your email app with a pre-filled message.</p>
   </form>
 
   <div
@@ -87,26 +85,23 @@
         Thank you for your message
       </h3>
       <p class="mt-3 text-sm leading-7 text-muted">
-        Your email app should have opened with your inquiry. Please send the email to complete your submission.
-      </p>
-      <p class="mt-4 text-sm leading-7 text-muted">
-        If your email app did not open, you can reach us directly at{' '}
-        <a href="mailto:updateme@glasstech.com" class="text-brand hover:text-ink transition-colors">
-          updateme@glasstech.com
-        </a>.
+        We've received your inquiry and will get back to you shortly.
       </p>
     </div>
   </div>
+
+  <p id="contact-error" hidden class="mt-4 text-sm text-accent" role="alert">
+    Something went wrong submitting your message. Please try again.
+  </p>
 </div>
 
 <script>
-  const CONTACT_EMAIL = 'updateme@glasstech.com';
-
   const form = document.getElementById('contact-form') as HTMLFormElement | null;
   const thankYou = document.getElementById('contact-thank-you');
   const thankYouHeading = document.getElementById('contact-thank-you-heading');
+  const errorMessage = document.getElementById('contact-error');
 
-  form?.addEventListener('submit', (e) => {
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     if (!form.checkValidity()) {
@@ -114,45 +109,30 @@
       return;
     }
 
-    const formData = new FormData(form);
-    const name = String(formData.get('name') ?? '').trim();
-    const company = String(formData.get('company') ?? '').trim();
-    const country = String(formData.get('country') ?? '').trim();
-    const product = String(formData.get('product') ?? '').trim();
-    const email = String(formData.get('email') ?? '').trim();
-    const phone = String(formData.get('phone') ?? '').trim();
-    const message = String(formData.get('message') ?? '').trim();
+    if (errorMessage) errorMessage.hidden = true;
 
-    const subject = `Glasstech Website Inquiry from ${name}`;
+    const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+    if (submitButton) submitButton.disabled = true;
 
-    const lines = [
-      'Glasstech Website Contact Form',
-      '==============================',
-      '',
-      `Name: ${name}`,
-      `Company: ${company}`,
-      `Country: ${country}`,
-      `Email: ${email}`,
-      `Phone: ${phone}`,
-    ];
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: new FormData(form),
+      });
 
-    if (product) {
-      lines.push(`Product Line: ${product}`);
+      if (!response.ok) {
+        throw new Error('Request failed');
+      }
+
+      form.hidden = true;
+      if (thankYou) {
+        thankYou.hidden = false;
+      }
+      thankYouHeading?.focus();
+    } catch (error) {
+      console.error('Failed to submit contact form', error);
+      if (errorMessage) errorMessage.hidden = false;
+      if (submitButton) submitButton.disabled = false;
     }
-
-    if (message) {
-      lines.push('', 'Message:', message);
-    }
-
-    const body = lines.join('\n');
-    const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    window.location.href = mailto;
-
-    form.hidden = true;
-    if (thankYou) {
-      thankYou.hidden = false;
-    }
-    thankYouHeading?.focus();
   });
 </script>
