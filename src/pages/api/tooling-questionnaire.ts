@@ -4,7 +4,7 @@ import { sendEmail } from '../../lib/sendEmail';
 
 export const prerender = false;
 
-const TOOLING_EMAIL = 'tooling@glasstech.com';
+const TOOLING_EMAIL = 'michael.d.christman@gmail.com';
 
 function getField(formData: FormData, name: string): string {
   return String(formData.get(name) ?? '').trim();
