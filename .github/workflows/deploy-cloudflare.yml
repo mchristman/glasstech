@@ -31,6 +31,7 @@ jobs:
         run: npm run build
 
       - name: Test
+        timeout-minutes: 3
         run: node --test test/*.test.mjs
 
       - name: Deploy to Cloudflare Workers

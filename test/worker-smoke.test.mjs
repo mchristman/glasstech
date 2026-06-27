@@ -52,6 +52,7 @@ before(async () => {
     {
       cwd: rootDir,
       stdio: ['ignore', 'pipe', 'pipe'],
+      detached: true,
     },
   );
 
@@ -60,8 +61,32 @@ before(async () => {
 
 after(async () => {
   if (!wranglerProcess) return;
-  wranglerProcess.kill('SIGTERM');
-  await new Promise((resolve) => wranglerProcess.once('exit', resolve));
+
+  const exited = new Promise((resolve) => wranglerProcess.once('exit', resolve));
+
+  // wrangler dev spawns workerd as a child process; SIGTERM to the parent
+  // alone can leave that child (and the parent's shutdown handlers) hanging
+  // indefinitely in CI sandboxes. Kill the whole process group, and fall
+  // back to SIGKILL if it doesn't exit promptly.
+  try {
+    process.kill(-wranglerProcess.pid, 'SIGTERM');
+  } catch {
+    wranglerProcess.kill('SIGTERM');
+  }
+
+  const timedOut = await Promise.race([
+    exited.then(() => false),
+    new Promise((resolve) => setTimeout(() => resolve(true), 5000)),
+  ]);
+
+  if (timedOut) {
+    try {
+      process.kill(-wranglerProcess.pid, 'SIGKILL');
+    } catch {
+      wranglerProcess.kill('SIGKILL');
+    }
+    await exited;
+  }
 });
 
 test('homepage renders without a server error', async () => {
