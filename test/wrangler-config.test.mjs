@@ -16,3 +16,14 @@ test('wrangler config enables nodejs_compat', () => {
       '"process is not defined" in the Workers runtime (astro dev and the deployed Worker).',
   );
 });
+
+test('wrangler routes legacy redirects through the Worker before static assets', () => {
+  assert.ok(
+    wranglerConfig.assets?.run_worker_first?.includes('/*.aspx'),
+    'legacy .aspx redirects must reach Astro middleware instead of being 404ed by Workers Static Assets.',
+  );
+  assert.ok(
+    wranglerConfig.assets?.run_worker_first?.includes('/EPB-L_English.pdf'),
+    'the moved EPB PDF redirect must reach Astro middleware instead of being 404ed by Workers Static Assets.',
+  );
+});
