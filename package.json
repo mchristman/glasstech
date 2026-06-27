@@ -13,7 +13,8 @@
     "scrape": "node scripts/scrape.mjs",
     "generate": "node scripts/generate-pages.mjs && node scripts/generate-redirects.mjs",
     "generate-types": "wrangler types",
-    "deploy": "npm run build && wrangler deploy"
+    "deploy": "npm run build && wrangler deploy",
+    "test": "npm run build && node --test test/*.test.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.0.0",

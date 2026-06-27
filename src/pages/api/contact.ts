@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import { env } from 'cloudflare:workers';
 import { sendEmail } from '../../lib/sendEmail';
 
 export const prerender = false;
@@ -9,9 +10,8 @@ function getField(formData: FormData, name: string): string {
   return String(formData.get(name) ?? '').trim();
 }
 
-export const POST: APIRoute = async ({ request, locals }) => {
-  const env = (locals as any).runtime?.env;
-  const apiKey = env?.RESEND_API_KEY;
+export const POST: APIRoute = async ({ request }) => {
+  const apiKey = (env as any).RESEND_API_KEY;
   if (!apiKey) {
     return new Response(JSON.stringify({ error: 'Email service is not configured.' }), { status: 500 });
   }
@@ -51,7 +51,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
   try {
     await sendEmail({
       apiKey,
-      fromAddress: env?.FROM_EMAIL,
+      fromAddress: (env as any).FROM_EMAIL,
       to: CONTACT_EMAIL,
       subject: `Glasstech Website Inquiry from ${name}`,
       text: lines.join('\n'),
