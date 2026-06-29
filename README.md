@@ -1,16 +1,19 @@
 # Glasstech Website
 
-Modern static rebuild of [glasstech.com](https://www.glasstech.com), migrated from legacy ASP.NET WebForms to **Astro 5** + **Tailwind CSS 4**.
+Modern static rebuild of [glasstech.com](https://www.glasstech.com), migrated from legacy ASP.NET WebForms to **Astro 7** + **Tailwind CSS 4**.
 
 ## Quick Start
 
 ```bash
-# Requires Node.js 22.12+
+# Requires Node.js 22.15+
 npm install
 npm run dev      # http://localhost:4321
 npm run build    # output → dist/
 npm run preview  # preview production build
+npm test         # build + Worker runtime smoke tests
 ```
+
+If `astro build` fails with `node:module` missing the `registerHooks` export, check `node -v`. The current Astro/Vite dependency set requires Node 22.15+ because `module.registerHooks()` was added in Node 22.15.0.
 
 ## Project Structure
 
@@ -59,8 +62,7 @@ Add these in the repository settings under **Settings → Secrets and variables 
 
 | Secret | Description |
 |--------|-------------|
-| `CLOUDFLARE_API_TOKEN` | Cloudflare API token with permission to deploy Workers |
-| `CLOUDFLARE_ACCOUNT_ID` | Optional. Only needed if deploy fails to resolve an account from the API token. Use the **Account ID** from the [dashboard](https://dash.cloudflare.com/) sidebar (32-character hex), not a zone ID. |
+| `CLOUDFLARE_API_TOKEN` | Cloudflare API token with permission to deploy Workers. This is the only GitHub Actions secret referenced by the deploy workflow. |
 
 ### Create a Cloudflare API token
 
@@ -71,6 +73,35 @@ Add these in the repository settings under **Settings → Secrets and variables 
 3. Copy the token into the `CLOUDFLARE_API_TOKEN` GitHub secret.
 
 After the first successful deploy, map your custom domain in the Cloudflare dashboard (Workers & Pages → `glasstech` → **Settings → Domains & Routes**).
+
+### Worker runtime configuration
+
+The Astro Cloudflare adapter serves the static site and API routes from the Worker defined in [`wrangler.jsonc`](wrangler.jsonc). Keep these runtime bindings configured for the deployed Worker:
+
+| Binding | Required | Purpose |
+|---------|----------|---------|
+| `RESEND_API_KEY` | Yes | Resend API key used by form API routes to send email. Set with `npx wrangler secret put RESEND_API_KEY` or the Cloudflare dashboard. |
+| `FROM_EMAIL` | No | Sender address passed to Resend. If omitted, [`src/lib/sendEmail.ts`](src/lib/sendEmail.ts) uses `Glasstech Website <onboarding@resend.dev>`. |
+
+For local Worker testing, copy `.dev.vars.example` to `.dev.vars` and fill the same bindings. The `.dev.vars*` files are ignored by Git except for the example file.
+
+### Forms and email delivery
+
+The contact and tooling questionnaire forms submit with `fetch()` to Worker API routes instead of opening a mail client:
+
+| Form | Page | API route | Required fields |
+|------|------|-----------|-----------------|
+| Contact | `/contact` | `POST /api/contact` | `name`, `company`, `country`, `email`, `phone` |
+| Tooling questionnaire | `/products/aftermarket/tooling/questionnaire` | `POST /api/tooling-questionnaire` | `contact`, `partName`, `modelName`, `customer`, `phone`, `email`, `location`, `furnaceNumber` |
+
+Both routes return JSON, reject missing required fields with `400`, return `500` when `RESEND_API_KEY` is not configured, and return `502` if Resend rejects the send request. Successful submissions return `{ "ok": true }` and the client-side form swaps to a thank-you state.
+
+Current recipient addresses are defined in the API route files:
+
+- `src/pages/api/contact.ts`
+- `src/pages/api/tooling-questionnaire.ts`
+
+The automated tests boot the built Worker with `wrangler dev` and verify key pages and form routes in the same runtime Cloudflare uses in production. Keep the `nodejs_compat` compatibility flag in `wrangler.jsonc`; the regression tests assert it because Astro's server runtime expects Node-compatible globals.
 
 ### GitHub Pages
 
@@ -118,10 +149,6 @@ Contactus.aspx        → /contact
 - **Error pages:** 404 is handled via `404.html` in the build output
 - **HTTPS:** Recommended; configure SSL certificate as usual
 
-### 5. Contact form
-
-The contact form opens the visitor's default email client with a pre-filled message to `updateme@glasstech.com`. No server-side form handler is required.
-
 ## Re-scraping Content
 
 If the legacy site content changes before final cutover:
@@ -144,7 +171,7 @@ npm run build
 
 ## Tech Stack
 
-- [Astro 5](https://astro.build/) — static site generator
+- [Astro 7](https://astro.build/) — static site generator
 - [Tailwind CSS 4](https://tailwindcss.com/) — utility-first styling
 - [Inter](https://fonts.google.com/specimen/Inter) — typography
 - [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/) — auto-generated sitemap
