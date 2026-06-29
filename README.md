@@ -5,13 +5,15 @@ Modern static rebuild of [glasstech.com](https://www.glasstech.com), migrated fr
 ## Quick Start
 
 ```bash
-# Requires Node.js 22.12+
+# Requires Node.js 22.15+
 npm install
 npm run dev      # http://localhost:4321
 npm run build    # output → dist/
 npm run preview  # preview production build
 npm test         # build + Worker runtime smoke tests
 ```
+
+If `astro build` fails with `node:module` missing the `registerHooks` export, check `node -v`. The current Astro/Vite dependency set requires Node 22.15+ because `module.registerHooks()` was added in Node 22.15.0.
 
 ## Project Structure
 
