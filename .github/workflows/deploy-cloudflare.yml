@@ -32,7 +32,7 @@ jobs:
 
       - name: Test
         timeout-minutes: 3
-        run: node --test test/*.test.mjs
+        run: node --experimental-strip-types --test test/*.test.mjs
 
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v4
