@@ -117,6 +117,43 @@ test('tooling questionnaire page renders without a server error', async () => {
   assert.match(body, /tooling-questionnaire-form/);
 });
 
+test('automotive product routes render matching product content', async () => {
+  const routes = [
+    ['/products/automotive/qs', /QS.*Quick Sag/i],
+    ['/products/automotive/db-4-quick-change', /DB 4.*Quick Change/i],
+    ['/products/automotive/sdb-l', /SDB-L.*Windshield/i],
+    ['/products/automotive/sdb-t', /SDB-T.*Bending/i],
+    ['/products/automotive/dbx-t', /DBX-T.*Deep Bend/i],
+  ];
+
+  for (const [route, heading] of routes) {
+    const response = await fetch(`${BASE_URL}${route}`);
+    const body = await response.text();
+
+    assert.equal(response.status, 200, `${route} should render successfully`);
+    assert.match(body, heading, `${route} should render the matching product copy`);
+  }
+});
+
+test('support, news, and inspection routes render matching section content', async () => {
+  const routes = [
+    ['/support/service-bulletins', /Service Bulletins/i],
+    ['/news-events/calendar', /Calendar of Shows/i],
+    ['/news-events/newsletter', /Newsletter/i],
+    ['/news-events/press-releases', /Press Releases/i],
+    ['/inspection/shape-modeler', /Shape Modeler/i],
+    ['/inspection/testimonials', /Testimonials/i],
+  ];
+
+  for (const [route, heading] of routes) {
+    const response = await fetch(`${BASE_URL}${route}`);
+    const body = await response.text();
+
+    assert.equal(response.status, 200, `${route} should render successfully`);
+    assert.match(body, heading, `${route} should render the matching section copy`);
+  }
+});
+
 test('contact API route rejects an empty submission instead of crashing', async () => {
   const response = await fetch(`${BASE_URL}/api/contact`, {
     method: 'POST',
